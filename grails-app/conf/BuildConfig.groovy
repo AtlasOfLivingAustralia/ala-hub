@@ -60,17 +60,19 @@ grails.project.dependency.resolution = {
         // plugins for the compile step
         //compile ":scaffolding:2.0.1"
         compile ':cache:1.1.1'
-
+        compile ":cache-headers:1.1.6"
         // plugins needed at runtime but not for compilation
         //runtime ":hibernate:3.6.10.7" // or ":hibernate4:4.1.11.6"
         //runtime ":database-migration:1.3.8"
         //runtime ":jquery:1.10.2.2"
         runtime ":resources:1.2.1"
+        runtime ":cached-resources:1.0"
+        //runtime ":zipped-resources:1.0"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
         //runtime ":biocache-hubs:1.0-SNAPSHOT"
-        runtime ":ala-web-theme:0.2-SNAPSHOT"
+        // runtime ":ala-web-theme:0.2-SNAPSHOT" // imported via biocache-hubs
     }
 }
