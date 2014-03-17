@@ -80,12 +80,12 @@ serverName = 'http://dev.ala.org.au:8080'
 security.cas.appServerName = "http://dev.ala.org.au:8080"
 security.cas.casServerName = 'https://auth.ala.org.au'
 security.cas.uriFilterPattern = '/admin, /admin/.*'
-security.cas.authenticateOnlyIfLoggedInPattern = ""
+security.cas.authenticateOnlyIfLoggedInPattern = "/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area"
 ssecurity.cas.uriExclusionFilterPattern = '/images.*,/css.*,/js.*'
 security.cas.loginUrl = 'https://auth.ala.org.au/cas/login'
 security.cas.logoutUrl = 'https://auth.ala.org.au/cas/logout'
 security.cas.casServerUrlPrefix = 'https://auth.ala.org.au/cas'
-security.cas.bypass = "true" // not sure this is working
+security.cas.bypass = false // set to true for non-ALA deployment
 auth.admin_role = "ROLE_ADMIN"
 
 // The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
@@ -183,9 +183,9 @@ environments {
 log4j = {
     // Example of changing the log pattern for the default console appender:
     //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
+    appenders {
+        console name:'stdout', layout:pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n")
+    }
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
@@ -201,6 +201,7 @@ log4j = {
     debug  'grails.app.controllers',
             'grails.app.services',
             //'grails.app.taglib',
+            //'grails.app',
             'au.org.ala.cas',
             'au.org.ala.biocache.hubs'
 }
