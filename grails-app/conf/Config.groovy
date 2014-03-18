@@ -69,6 +69,8 @@ downloads.extra = "dataResourceUid,dataResourceName.p"
 googleKey = "ABQIAAAAoBSAWIKN0nq5ftlHnSqAURRYnbqkszd6zrcg1s-Fm7JsBxVj5xRaQWSGnjeflao2CYtNRBZxuDrYyg"
 // data hub uid
 biocacheRestService.queryContext = ""
+apiKey = "api-key-to-use"
+clubRoleForHub = "ROLE_ADMIN"
 
 /******************************************************************************\
  *  CAS SETTINGS
