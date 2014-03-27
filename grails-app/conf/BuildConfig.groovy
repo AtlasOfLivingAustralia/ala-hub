@@ -1,4 +1,4 @@
-grails.servlet.version = "3.0" // Change depending on target container compliance (2.5 or 3.0)
+grails.servlet.version = "2.5" // Change depending on target container compliance (2.5 or 3.0)
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
@@ -45,6 +45,8 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo "http://maven.ala.org.au/repository"
+        mavenRepo "http://maven.tmatesoft.com/content/repositories/releases/"
     }
 
     dependencies {
@@ -73,6 +75,6 @@ grails.project.dependency.resolution = {
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
         //runtime ":biocache-hubs:1.0-SNAPSHOT"
-        // runtime ":ala-web-theme:0.2-SNAPSHOT" // imported via biocache-hubs
+        runtime ":ala-web-theme:0.2.4"
     }
 }

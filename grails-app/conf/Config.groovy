@@ -39,10 +39,9 @@ println "default_config = ${default_config}"
 /******************************************************************************\
  *  SKINNING
 \******************************************************************************/
-ala.skin = 'ala'
+skin.layout = 'ala'
 skin.orgNameLong = "Atlas of Living Australia"
 skin.orgNameShort = "ALA"
-map.pointColour = "df4a21"
 // whether crumb trail should include a home link that is external to this webabpp - ala.baseUrl is used if true
 skin.includeBaseUrl = true
 skin.headerUrl = "classpath:resources/generic-header.jsp" // can be external URL
@@ -52,25 +51,10 @@ skin.fluidLayout = true // true or false
 /******************************************************************************\
  *  EXTERNAL SERVERS
 \******************************************************************************/
-bie.baseURL = "http://bie.ala.org.au/"
-bie.searchPath = "/search"
-biocache.baseURL = "http://dev.ala.org.au:8080/biocache-hubs"
-biocacheServicesUrl = "http://biocache.ala.org.au/ws"
-spatial.baseURL = "http://spatial.ala.org.au/"
-ala.baseURL = "http://www.ala.org.au"
-collections.baseUrl = "http://collections.ala.org.au"
-dataQualityChecksUrl = "https://docs.google.com/spreadsheet/pub?key=0AjNtzhUIIHeNdHJOYk1SYWE4dU1BMWZmb2hiTjlYQlE&single=true&gid=0&output=csv"
 
 /******************************************************************************\
  *  MISC
 \******************************************************************************/
-map.cloudmade.key = "BC9A493B41014CAABB98F0471D759707" // this is website specific
-downloads.extra = "dataResourceUid,dataResourceName.p"
-googleKey = "ABQIAAAAoBSAWIKN0nq5ftlHnSqAURRYnbqkszd6zrcg1s-Fm7JsBxVj5xRaQWSGnjeflao2CYtNRBZxuDrYyg"
-// data hub uid
-biocacheRestService.queryContext = ""
-apiKey = "api-key-to-use"
-clubRoleForHub = "ROLE_ADMIN"
 
 /******************************************************************************\
  *  CAS SETTINGS
@@ -166,7 +150,7 @@ environments {
         serverName='http://dev.ala.org.au:8080'
         security.cas.appServerName = serverName
         security.cas.contextPath = "/${appName}"
-        grails.resources.debug = true // cache & resources plugins
+        //grails.resources.debug = true // cache & resources plugins
     }
     test {
         grails.serverURL = 'http://biocache-test.ala.org.au'
@@ -201,9 +185,10 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
     debug  'grails.app.controllers',
-            'grails.app.services',
+           'grails.app.services',
             //'grails.app.taglib',
             //'grails.app',
             'au.org.ala.cas',
-            'au.org.ala.biocache.hubs'
+            'au.org.ala.biocache.hubs',
+            'au.org.ala.biocache.hubs.OccurrenceTagLib'
 }
