@@ -144,10 +144,10 @@ environments {
         //grails.resources.debug = true // cache & resources plugins
     }
     test {
-        grails.serverURL = 'http://biocache-test.ala.org.au'
-        serverName='http://biocache-test.ala.org.au'
+        grails.serverURL = 'http://130.220.209.134:8080/'
+        serverName='http://130.220.209.134:8080/'
         security.cas.appServerName = serverName
-        //security.cas.contextPath = "/${appName}"
+        security.cas.contextPath = "/${appName}"
     }
     production {
         grails.serverURL = 'http://biocache.ala.org.au'
@@ -198,7 +198,7 @@ log4j = {
             'org.springframework',
             'org.hibernate',
             'net.sf.ehcache.hibernate'
-    debug  'grails.app.controllers',
+    debug  'grails.app',
             'grails.app.services',
             //'grails.app.taglib',
             'au.org.ala.cas',

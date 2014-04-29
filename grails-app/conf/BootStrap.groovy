@@ -1,10 +1,11 @@
-import grails.util.Holders
 
 class BootStrap {
+    def grailsApplication
 
     def init = { servletContext ->
-        log.debug "config.security.cas.bypass = ${Holders.config.security.cas.bypass}"
-        log.debug "config.ala.skin = ${Holders.config.ala.skin}"
+        log.info "config.security.cas.bypass = ${grailsApplication.config.security.cas.bypass}"
+        log.info "config.ala.skin = ${grailsApplication.config.ala.skin}"
+        log.info "config.biocache.ajax.useProxy = ${grailsApplication.config.biocache.ajax.useProxy}"
     }
     def destroy = {
     }
