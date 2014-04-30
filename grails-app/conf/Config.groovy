@@ -65,6 +65,9 @@ security.cas.casServerUrlPrefix = 'https://auth.ala.org.au/cas'
 security.cas.bypass = false // set to true for non-ALA deployment
 auth.admin_role = "ROLE_ADMIN"
 
+skin.useAlaSpatialPortal = false
+test.var = "ala-hub"
+
 // The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
 grails.mime.disable.accept.header.userAgents = ['Gecko', 'WebKit', 'Presto', 'Trident']
 grails.mime.types = [ // the first one is the default format
@@ -153,6 +156,7 @@ environments {
         grails.serverURL = 'http://biocache.ala.org.au'
         serverName='http://biocache.ala.org.au'
         security.cas.appServerName = serverName
+        security.cas.contextPath = ""
     }
 }
 
@@ -167,15 +171,17 @@ log4j = {
     appenders {
         environments {
             production {
-                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: "/var/log/tomcat6/${appName}.log", threshold: org.apache.log4j.Level.ERROR, layout: pattern(conversionPattern: "%d %-5p [%c{1}] %m%n")
-                'null' name: "stacktrace"
+//                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: "/var/log/tomcat6/${appName}.log", threshold: org.apache.log4j.Level.ERROR, layout: pattern(conversionPattern: "%d %-5p [%c{1}] %m%n")
+//                'null' name: "stacktrace"
+                console name: "stdout", layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n"), threshold: org.apache.log4j.Level.WARN
             }
             development {
                 console name: "stdout", layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n"), threshold: org.apache.log4j.Level.DEBUG
             }
             test {
-                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: "/tmp/${appName}-test.log", threshold: org.apache.log4j.Level.DEBUG, layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n")
-                'null' name: "stacktrace"
+//                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: "/tmp/${appName}-test.log", threshold: org.apache.log4j.Level.DEBUG, layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n")
+//                'null' name: "stacktrace"
+                console name: "stdout", layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n"), threshold: org.apache.log4j.Level.INFO
             }
         }
     }
