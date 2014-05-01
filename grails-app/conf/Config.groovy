@@ -65,6 +65,7 @@ security.cas.casServerUrlPrefix = 'https://auth.ala.org.au/cas'
 security.cas.bypass = false // set to true for non-ALA deployment
 auth.admin_role = "ROLE_ADMIN"
 
+skin.fluidLayout = true
 skin.useAlaSpatialPortal = false
 test.var = "ala-hub"
 
@@ -188,9 +189,9 @@ log4j = {
 
     root {
         // change the root logger to my tomcatLog file
-        error 'tomcatLog'
-        warn 'tomcatLog'
-        additivity = true
+//        error 'tomcatLog'
+//        warn 'tomcatLog'
+//        additivity = true
     }
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
