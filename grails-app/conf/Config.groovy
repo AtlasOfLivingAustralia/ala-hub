@@ -140,23 +140,23 @@ grails.hibernate.cache.queries = false
 
 environments {
     development {
-        grails.serverURL = 'http://dev.ala.org.au:8080/' + appName
-        serverName='http://dev.ala.org.au:8080'
-        security.cas.appServerName = serverName
-        security.cas.contextPath = "/${appName}"
+//        grails.serverURL = 'http://dev.ala.org.au:8080/' + appName
+//        serverName='http://dev.ala.org.au:8080'
+//        security.cas.appServerName = serverName
+//        security.cas.contextPath = "/${appName}"
         //grails.resources.debug = true // cache & resources plugins
     }
     test {
-        grails.serverURL = 'http://130.220.209.134:8080/'
-        serverName='http://130.220.209.134:8080/'
-        security.cas.appServerName = serverName
-        security.cas.contextPath = "/${appName}"
+//        grails.serverURL = 'http://130.220.209.134:8080/'
+//        serverName='http://130.220.209.134:8080/'
+//        security.cas.appServerName = serverName
+//        security.cas.contextPath = "/${appName}"
     }
     production {
-        grails.serverURL = 'http://biocache.ala.org.au'
-        serverName='http://biocache.ala.org.au'
-        security.cas.appServerName = serverName
-        security.cas.contextPath = ""
+//        grails.serverURL = 'http://biocache.ala.org.au'
+//        serverName='http://biocache.ala.org.au'
+//        security.cas.appServerName = serverName
+//        security.cas.contextPath = ""
     }
 }
 
