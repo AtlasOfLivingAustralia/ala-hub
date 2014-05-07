@@ -53,8 +53,8 @@ skin.fluidLayout = true // true or false
  *  NOTE: Some of these will be ignored if default_config exists
 \******************************************************************************/
 
-serverName = 'http://dev.ala.org.au:8080'
-security.cas.appServerName = "http://dev.ala.org.au:8080"
+serverName = 'http://biocache.ala.org.au'
+security.cas.appServerName = "http://biocache.ala.org.au"
 security.cas.casServerName = 'https://auth.ala.org.au'
 security.cas.uriFilterPattern = '/admin, /admin/.*'
 security.cas.authenticateOnlyIfLoggedInPattern = "/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area"
@@ -141,6 +141,7 @@ grails.hibernate.cache.queries = false
 
 environments {
     development {
+        serverName = 'http://dev.ala.org.au:8080'
 //        grails.serverURL = 'http://dev.ala.org.au:8080/' + appName
 //        serverName='http://dev.ala.org.au:8080'
 //        security.cas.appServerName = serverName
