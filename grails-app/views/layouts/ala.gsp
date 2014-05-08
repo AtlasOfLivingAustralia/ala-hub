@@ -69,7 +69,7 @@
 <body class="${pageProperty(name:'body.class')?:'nav-datasets'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
 <alatag:outageBanner />
 <g:set var="fluidLayout" value="${grailsApplication.config.skin.fluidLayout?.toBoolean()}"/>
-<hf:banner logoutUrl="${grailsApplication.config.grails.serverURL}/logout/logout" fluidLayout="${fluidLayout}"/>
+<hf:banner logoutUrl="${g.createLink(controller:"logout", action:"logout", absolute: true)}" fluidLayout="${fluidLayout}"/>
 
 <hf:menu fluidLayout="${fluidLayout}"/>
 
