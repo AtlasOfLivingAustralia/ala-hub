@@ -68,6 +68,7 @@ auth.admin_role = "ROLE_ADMIN"
 skin.fluidLayout = true
 skin.useAlaSpatialPortal = false
 test.var = "ala-hub"
+// facets.includeDynamicFacets = true // for sandbox
 
 // The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
 grails.mime.disable.accept.header.userAgents = ['Gecko', 'WebKit', 'Presto', 'Trident']
@@ -172,8 +173,8 @@ log4j = {
     appenders {
         environments {
             production {
-//                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: "/var/log/tomcat6/${appName}.log", threshold: org.apache.log4j.Level.ERROR, layout: pattern(conversionPattern: "%d %-5p [%c{1}] %m%n")
-//                'null' name: "stacktrace"
+                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: "/var/log/tomcat6/ala-hub.log", threshold: org.apache.log4j.Level.ERROR, layout: pattern(conversionPattern: "%d %-5p [%c{1}] %m%n")
+               'null' name: "stacktrace"
                 console name: "stdout", layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n"), threshold: org.apache.log4j.Level.WARN
             }
             development {
@@ -189,9 +190,9 @@ log4j = {
 
     root {
         // change the root logger to my tomcatLog file
-//        error 'tomcatLog'
-//        warn 'tomcatLog'
-//        additivity = true
+        error 'tomcatLog'
+        warn 'tomcatLog'
+        additivity = true
     }
 
     error   'org.codehaus.groovy.grails.web.servlet',        // controllers
