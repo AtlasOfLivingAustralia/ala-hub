@@ -25,7 +25,7 @@ if (new File(default_config).exists()) {
 }
 
 println "[${appName}] (*) grails.config.locations = ${grails.config.locations}"
-println "default_config = ${default_config}"
+//println "default_config = ${default_config}"
 
 /******************************************************************************\
  *  SKINNING
@@ -52,7 +52,7 @@ skin.fluidLayout = true // true or false
  *
  *  NOTE: Some of these will be ignored if default_config exists
 \******************************************************************************/
-
+grails.serverURL = 'http://biocache.ala.org.au'
 serverName = 'http://biocache.ala.org.au'
 security.cas.appServerName = "http://biocache.ala.org.au"
 security.cas.casServerName = 'https://auth.ala.org.au'
@@ -142,8 +142,7 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         serverName = 'http://dev.ala.org.au:8080'
-//        grails.serverURL = 'http://dev.ala.org.au:8080/' + appName
-//        serverName='http://dev.ala.org.au:8080'
+        grails.serverURL = 'http://dev.ala.org.au:8080/' + appName
 //        security.cas.appServerName = serverName
 //        security.cas.contextPath = "/${appName}"
         //grails.resources.debug = true // cache & resources plugins
@@ -195,7 +194,7 @@ log4j = {
 //        additivity = true
     }
 
-    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
+    error   'org.codehaus.groovy.grails.web.servlet',        // controllers
             'org.codehaus.groovy.grails.web.pages',          // GSP
             'org.codehaus.groovy.grails.web.sitemesh',       // layouts
             'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
@@ -206,7 +205,8 @@ log4j = {
             'org.springframework',
             'org.hibernate',
             'net.sf.ehcache.hibernate'
-    debug  'grails.app',
+    info    'grails.app'
+    debug   'grails.app',
             'grails.app.services',
             //'grails.app.taglib',
             'au.org.ala.cas',
