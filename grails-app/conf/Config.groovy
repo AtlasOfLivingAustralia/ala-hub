@@ -171,31 +171,57 @@ log4j = {
     //}
 
     appenders {
-        environments {
-            production {
-                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: "/var/log/tomcat6/ala-hub.log", threshold: org.apache.log4j.Level.ERROR, layout: pattern(conversionPattern: "%d %-5p [%c{1}] %m%n")
-               'null' name: "stacktrace"
-                console name: "stdout", layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n"), threshold: org.apache.log4j.Level.WARN
-            }
+        environments{
             development {
-                console name: "stdout", layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n"), threshold: org.apache.log4j.Level.DEBUG
+                console name: "stdout",
+                        layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n"),
+                        threshold: org.apache.log4j.Level.DEBUG
+                rollingFile name: "alaHubLog",
+                        maxFileSize: 104857600,
+                        file: "/var/log/tomcat6/ala-hub.log",
+                        threshold: org.apache.log4j.Level.INFO,
+                        layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n")
+                rollingFile name: "stacktrace",
+                        maxFileSize: 104857600,
+                        file: "/var/log/tomcat6/ala-hub-stacktrace.log"
             }
-            test {
-//                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: "/tmp/${appName}-test.log", threshold: org.apache.log4j.Level.DEBUG, layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n")
-//                'null' name: "stacktrace"
-                console name: "stdout", layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n"), threshold: org.apache.log4j.Level.INFO
+            production {
+                rollingFile name: "alaHubLog",
+                        maxFileSize: 104857600,
+                        file: "/var/log/tomcat6/ala-hub.log",
+                        threshold: org.apache.log4j.Level.INFO,
+                        layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n")
+                rollingFile name: "stacktrace",
+                        maxFileSize: 104857600,
+                        file: "/var/log/tomcat6/ala-hub-stacktrace.log"
             }
         }
     }
 
-    root {
-        // change the root logger to my tomcatLog file
-        error 'tomcatLog'
-        warn 'tomcatLog'
-        additivity = true
+    environments {
+        development {
+            all additivity: false, stdout: [
+                    'grails.app.controllers.au.org.ala.biocache.hubs',
+                    'grails.app.domain.au.org.ala.biocache.hubs',
+                    'grails.app.services.au.org.ala.biocache.hubs',
+                    'grails.app.taglib.au.org.ala.biocache.hubs',
+                    'grails.app.conf.au.org.ala.biocache.hubs',
+                    'grails.app.filters.au.org.ala.biocache.hubs'/*,
+                    'au.org.ala.cas.client'*/
+            ]
+        }
     }
 
-    error   'org.codehaus.groovy.grails.web.servlet',        // controllers
+    all additivity: false, alaHubLog: [
+            'grails.app.controllers.au.org.ala.biocache.hubs',
+            'grails.app.domain.au.au.org.ala.biocache.hubs',
+            'grails.app.services.au.org.ala.biocache.hubs',
+            'grails.app.taglib.au.org.ala.biocache.hubs',
+            'grails.app.conf.au.org.ala.biocache.hubs',
+            'grails.app.filters.au.org.ala.biocache.hubs'
+    ]
+
+    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
             'org.codehaus.groovy.grails.web.pages',          // GSP
             'org.codehaus.groovy.grails.web.sitemesh',       // layouts
             'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
@@ -203,9 +229,7 @@ log4j = {
             'org.codehaus.groovy.grails.commons',            // core / classloading
             'org.codehaus.groovy.grails.plugins',            // plugins
             'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
-            'org.springframework',
-            'org.hibernate',
-            'net.sf.ehcache.hibernate'
+            'org.springframework'
     info    'grails.app'
     debug   'grails.app',
             'grails.app.services',
