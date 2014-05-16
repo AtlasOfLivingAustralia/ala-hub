@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="svn.revision" content="${g.meta(name:'svn.revision')}"/>
     <meta name="app.version" content="${g.meta(name:'app.version')}"/>
     <meta name="app.build" content="${g.meta(name:'app.build')}"/>
     <meta name="description" content="Atlas of Living Australia"/>
