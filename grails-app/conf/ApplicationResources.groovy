@@ -11,10 +11,11 @@ modules = {
 
     bootstrapLocal {
         dependsOn 'core'
+        defaultBundle 'main-core'
         resource url:[dir:'js', file:'bootstrap.js', plugin: 'ala-web-theme', disposition: 'head']
-        resource url:[dir:'css', file:'bootstrap.css', plugin: 'ala-web-theme'], attrs:[media:'screen, projection, print']
-        resource url:[dir:'css', file:'bootstrap-responsive.css', plugin: 'ala-web-theme'], attrs:[media:'screen'] // id:'responsiveCss'
-        resource url:[dir:'css', file:'ala-extra.css'], attrs:[media:'screen']
+        resource url:[dir:'css', file:'bootstrap.css', plugin: 'ala-web-theme'] //, attrs:[media:'screen, projection, print']
+        resource url:[dir:'css', file:'bootstrap-responsive.css', plugin: 'ala-web-theme'] //, attrs:[media:'screen'] // id:'responsiveCss'
+        resource url:[dir:'css', file:'ala-extra.css']//, attrs:[media:'screen']
     }
 
 }
