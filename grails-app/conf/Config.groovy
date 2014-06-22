@@ -66,7 +66,9 @@ security.cas.bypass = false // set to true for non-ALA deployment
 auth.admin_role = "ROLE_ADMIN"
 
 skin.fluidLayout = true
-skin.useAlaSpatialPortal = false
+skin.useAlaSpatialPortal = true
+skin.useAlaBie = true
+skin.taxaLinks.baseUrl = "http://bie.ala.org.au/species/" // 3rd party species pages. Leave blank for no links
 test.var = "ala-hub"
 
 // facets.includeDynamicFacets = true // for sandbox
@@ -94,6 +96,7 @@ grails.mime.types = [ // the first one is the default format
 
 // What URL patterns should be processed by the resources plugin
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
+grails.resources.work.dir = '/data/cache/' +  + appName
 
 // Legacy setting for codec used to encode data with ${}
 grails.views.default.codec = "html"
