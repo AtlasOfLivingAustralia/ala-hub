@@ -96,7 +96,7 @@ grails.mime.types = [ // the first one is the default format
 
 // What URL patterns should be processed by the resources plugin
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
-grails.resources.work.dir = '/data/cache/' + appName
+grails.resources.work.dir = '/data/${appName}/cache/'
 
 // Legacy setting for codec used to encode data with ${}
 grails.views.default.codec = "html"
