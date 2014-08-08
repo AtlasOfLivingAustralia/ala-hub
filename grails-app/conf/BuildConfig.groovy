@@ -61,9 +61,9 @@ grails.project.dependency.resolution = {
         build ":tomcat:7.0.50"
         compile ':cache:1.1.1'
         compile ":cache-headers:1.1.6"
-        runtime ":resources:1.2.7"
+        runtime ":resources:1.2.8"
         runtime ":cached-resources:1.0"
-        runtime ":biocache-hubs:0.46"
+        runtime ":biocache-hubs:0.48"
         runtime ":ala-web-theme:0.8.1"
     }
 }
