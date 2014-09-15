@@ -35,6 +35,7 @@ skin.orgNameLong = "Atlas of Living Australia"
 skin.orgNameShort = "ALA"
 // whether crumb trail should include a home link that is external to this webabpp - ala.baseUrl is used if true
 skin.includeBaseUrl = true
+skin.taxaLinks.baseUrl = "http://bie.ala.org.au/species/"
 skin.headerUrl = "classpath:resources/generic-header.jsp" // can be external URL
 skin.footerUrl = "classpath:resources/generic-footer.jsp" // can be external URL
 skin.fluidLayout = true // true or false
