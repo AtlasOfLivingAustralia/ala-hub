@@ -6,7 +6,7 @@ grails.project.work.dir = "target/work"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}.war"
-//grails.plugin.location.'biocache-hubs' = "../biocache-hubs"
+grails.plugin.location.'biocache-hubs' = "../biocache-hubs"
 
 grails.project.fork = [
     // configure settings for compilation JVM, note that if you alter the Groovy version forked compilation is required
@@ -64,7 +64,7 @@ grails.project.dependency.resolution = {
         compile ":cache-headers:1.1.6"
         runtime ":resources:1.2.8"
         runtime ":cached-resources:1.0"
-        runtime ":biocache-hubs:0.60"
+        runtime ":biocache-hubs:0.61"
         runtime ":ala-web-theme:0.8.1"
     }
 }
