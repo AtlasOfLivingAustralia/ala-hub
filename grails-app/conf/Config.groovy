@@ -168,8 +168,8 @@ environments {
 }
 
 //this can be overriden this in external configuration
-logging.dir = (System.getProperty('catalina.base') ? System.getProperty('catalina.base') + '/logs'  : '/var/log/tomcat6')
-
+def loggingDir = (System.getProperty('catalina.base') ? System.getProperty('catalina.base') + '/logs' : './logs')
+def appName = grails.util.Metadata.current.'app.name'
 // log4j configuration
 log4j = {
     // Example of changing the log pattern for the default console appender:
