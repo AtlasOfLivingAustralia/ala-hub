@@ -3,3 +3,60 @@
 .toggleResponsive {
     display: none;
 }
+
+#main-content {
+    margin-bottom: 5em;
+}
+
+#content .nav-tabs li:not(.active)  a {
+    background-color: #f2f2f2;
+}
+
+.rowA {
+    margin-bottom: 2px;
+}
+
+body #main-content #customiseFacetsButton > .dropdown-menu, #main-content #resultsReturned .dropdown-menu {
+    background-color: white;
+}
+
+/* Leaflet overrides */
+#main-content .leaflet-container a {
+    color: #C44D34;
+}
+
+#main-content .leaflet-bar a.leaflet-disabled {
+    color: #bbb;
+}
+
+#main-content .leaflet-container a.leaflet-popup-close-button {
+    color: #999;
+}
+
+#main-content .leaflet-bar a, #main-content .leaflet-bar a:hover,  #main-content a.colour-by-legend-toggle {
+    color: black;
+}
+
+/* Media rules */
+@media only screen and (max-width : 992px) {
+    body > #main-content {
+        margin-top: 60px;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    body > #main-content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    body > #main-content {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    input#taxaQuery {
+        width: 50%;
+    }
+}
