@@ -37,6 +37,14 @@ body #main-content #customiseFacetsButton > .dropdown-menu, #main-content #resul
     color: black;
 }
 
+#outageMessage {
+    font-size: 18px;
+    border: 4px solid #df4a21;
+    display: table;
+    margin: 0 auto;
+    min-width: 50%;
+}
+
 /* Media rules */
 @media only screen and (max-width : 992px) {
     body > #main-content {
