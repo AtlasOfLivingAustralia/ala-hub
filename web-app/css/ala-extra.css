@@ -45,6 +45,14 @@ body #main-content #customiseFacetsButton > .dropdown-menu, #main-content #resul
     min-width: 50%;
 }
 
+#currentFilter span.checkbox-unchecked {
+    background: url('images/checkbox-unchecked.png') no-repeat left top;
+}
+
+#currentFilter span.checkbox-checked {
+    background: url('images/checkbox-checked.png') no-repeat left top;
+}
+
 /* Media rules */
 @media only screen and (max-width : 992px) {
     body > #main-content {
