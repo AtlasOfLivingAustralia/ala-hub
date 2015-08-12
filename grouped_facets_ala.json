@@ -163,7 +163,7 @@
             },
             {  
                 sort:"count",
-                field:"ibra"
+                field:"cl1048"
             },
             {  
                 sort:"count",
