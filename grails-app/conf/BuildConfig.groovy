@@ -6,6 +6,7 @@ grails.project.work.dir = "target/work"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}.war"
+
 //grails.plugin.location.'biocache-hubs' = "../biocache-hubs"
 //grails.plugin.location.'ala-bootstrap2' = "../ala-bootstrap2"
 
@@ -36,9 +37,7 @@ grails.project.dependency.resolution = {
 
     repositories {
         mavenLocal()
-        mavenRepo ("http://nexus.ala.org.au/content/groups/public/") {
-            updatePolicy 'always'
-        }
+        mavenRepo ("http://nexus.ala.org.au/content/groups/public/")
     }
 
     dependencies {
@@ -54,8 +53,8 @@ grails.project.dependency.resolution = {
         compile ":cache-headers:1.1.6"
         runtime ":resources:1.2.8"
         runtime ":cached-resources:1.0"
-        runtime ":biocache-hubs:0.72-SNAPSHOT"
-        runtime ":ala-bootstrap2:2.2"
-        runtime ":ala-auth:1.2"
+        runtime ":biocache-hubs:0.72"
+        runtime ":ala-bootstrap2:2.3"
+        runtime ":ala-auth:1.3.1"
     }
 }
