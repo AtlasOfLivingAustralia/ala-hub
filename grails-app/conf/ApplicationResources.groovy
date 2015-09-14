@@ -8,7 +8,7 @@ modules = {
     ala {
         dependsOn 'bootstrap', 'hubCore' // from ala-web-theme plugin
         defaultBundle 'main-core'
-        resource url:[dir:'css', file:'ala-extra.css']
+        resource url:[dir:'css', file:'ala-extra.css'],attrs: [ media: 'all' ]
     }
 
 }
