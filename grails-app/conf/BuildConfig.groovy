@@ -6,7 +6,7 @@ grails.project.work.dir = "target/work"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}.war"
-//grails.plugin.location.'biocache-hubs' = "../biocache-hubs"
+grails.plugin.location.'biocache-hubs' = "../biocache-hubs"
 //grails.plugin.location.'ala-bootstrap2' = "../ala-bootstrap2"
 
 grails.project.fork = [
@@ -52,10 +52,11 @@ grails.project.dependency.resolution = {
         build ":tomcat:7.0.54"
         compile ':cache:1.1.1'
         compile ":cache-headers:1.1.6"
+        runtime ":jquery:1.11.1"
         runtime ":resources:1.2.8"
         runtime ":cached-resources:1.0"
-        runtime ":biocache-hubs:0.72-SNAPSHOT"
-        runtime ":ala-bootstrap2:2.2"
+        //runtime ":biocache-hubs:0.72-SNAPSHOT"
+        runtime ":ala-bootstrap3:1.3"
         runtime ":ala-auth:1.2"
     }
 }

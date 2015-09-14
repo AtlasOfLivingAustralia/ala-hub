@@ -2,6 +2,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <alatag:addApplicationMetaTags/>
+    <meta name="app.version" content="${g.meta(name:'app.version')}"/>
+    <meta name="app.build" content="${g.meta(name:'app.build')}"/>
     <meta name="description" content="Atlas of Living Australia"/>
     <meta name="author" content="Atlas of Living Australia">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
