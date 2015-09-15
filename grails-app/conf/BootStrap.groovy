@@ -8,6 +8,7 @@ class BootStrap {
         log.info "config.biocache.ajax.useProxy = ${grailsApplication.config.biocache.ajax.useProxy}"
         log.warn "config.serverName = ${grailsApplication.config.serverName}"
         log.warn "config.grails.serverURL = ${grailsApplication.config.grails.serverURL}"
+        log.warn "config.headerAndFooter.baseURL = ${grailsApplication.config.headerAndFooter.baseURL}"
     }
     def destroy = {
     }
