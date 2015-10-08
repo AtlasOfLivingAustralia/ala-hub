@@ -10,7 +10,7 @@
     <title><g:layoutTitle /></title>
 
     <%-- Do not include JS & CSS files here - add them to your app's "application" module (in "Configuration/ApplicationResources.groovy") --%>
-    <r:require modules="ala, ala_extras"/>
+    <r:require modules="alaBs"/>
 
     %{--<r:layoutResources/>--}%
     <g:layoutHead />
