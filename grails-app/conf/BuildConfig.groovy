@@ -8,6 +8,7 @@ grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}.war"
 
 //grails.plugin.location.'biocache-hubs' = "../biocache-hubs"
+//grails.plugin.location.'downloads-plugin' = "../downloads-plugin"
 //grails.plugin.location.'ala-bootstrap2' = "../ala-bootstrap2"
 
 grails.project.fork = [
@@ -53,7 +54,8 @@ grails.project.dependency.resolution = {
         compile ":cache-headers:1.1.6"
         runtime ":resources:1.2.8"
         runtime ":cached-resources:1.0"
-        runtime ":biocache-hubs:0.74"
+        runtime ":biocache-hubs:0.75"
+        runtime ":downloads-plugin:1.0"
         runtime ":ala-bootstrap2:2.4"
         runtime ":ala-auth:1.3.1"
     }
