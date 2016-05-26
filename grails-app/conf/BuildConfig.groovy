@@ -38,7 +38,9 @@ grails.project.dependency.resolution = {
 
     repositories {
         mavenLocal()
-        mavenRepo ("http://nexus.ala.org.au/content/groups/public/")
+        mavenRepo ("http://nexus.ala.org.au/content/groups/public/") {
+            updatePolicy "interval:1"
+        }
     }
 
     dependencies {
@@ -55,7 +57,7 @@ grails.project.dependency.resolution = {
         compile ":cache-headers:1.1.6"
         runtime ":resources:1.2.8"
         runtime ":cached-resources:1.0"
-        runtime ":biocache-hubs:0.75"
+        runtime ":biocache-hubs:0.76-SNAPSHOT"
         runtime ":downloads-plugin:1.1-SNAPSHOT"
         runtime ":ala-bootstrap2:2.4"
         runtime ":ala-auth:1.3.1"
