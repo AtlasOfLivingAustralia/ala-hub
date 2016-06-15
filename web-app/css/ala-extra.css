@@ -25,7 +25,7 @@ body #main-content #customiseFacetsButton > .dropdown-menu, #main-content #resul
     color: #C44D34;
 }
 
-#main-content .leaflet-bar a.leaflet-disabled {
+#main-content .leaflet-bar a.leaflet-disabled, #main-content .leaflet-bar a.leaflet-disabled:hover {
     color: #bbb;
 }
 
