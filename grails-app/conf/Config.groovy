@@ -203,3 +203,8 @@ log4j = {
 
     debug   'grails.app','au.org.ala.cas','au.org.ala.biocache'
 }
+
+//Restrict sandbox data access to drts by userid or admin
+// uriFilterPattern=/proxy/.*,/occurrences/.*
+// biocache.ajax.useProxy=true
+// sandbox.access.restricted=true
