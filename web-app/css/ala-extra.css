@@ -53,6 +53,14 @@ body #main-content #customiseFacetsButton > .dropdown-menu, #main-content #resul
     background: url('images/checkbox-checked.png') no-repeat left top;
 }
 
+/* anchor offset for floating header */
+:target:before {
+    content:"";
+    display:block;
+    height:67px; /* fixed header height*/
+    margin:-67px 0 0; /* negative fixed header height */
+}
+
 /* Media rules */
 @media only screen and (max-width : 992px) {
     body > #main-content {
