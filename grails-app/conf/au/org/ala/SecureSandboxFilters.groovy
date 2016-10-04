@@ -27,7 +27,7 @@ class SecureSandboxFilters {
                     log.info("Params QC: ${params.qc}")
 
                     //required by ProxyController to include qc with the queryString
-                    request.parameterMap.put('qc', [params.qc])
+                    request.parameterMap.put('qc', params.qc)
                 }
             }
         }
