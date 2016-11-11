@@ -8,7 +8,8 @@
     <link href="http://www.ala.org.au/wp-content/themes/ala2011/images/favicon.ico" rel="shortcut icon"  type="image/x-icon"/>
 
     <title><g:layoutTitle /></title>
-
+    <g:render template="/layouts/global" plugin="biocache-hubs"/>
+    
     <%-- Do not include JS & CSS files here - add them to your app's "application" module (in "Configuration/ApplicationResources.groovy") --%>
     <r:require modules="alaBs"/>
 
