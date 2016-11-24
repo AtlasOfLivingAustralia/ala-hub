@@ -17,11 +17,12 @@
     <g:layoutHead />
 </head>
 <body class="${pageProperty(name:'body.class')?:'nav-datasets'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
-<alatag:outageBanner />
-%{--<g:set var="fluidLayout" value="${grailsApplication.config.skin.fluidLayout?.toBoolean() || pageProperty(name:'meta.fluidLayout').toBoolean()}"/>--}%
 <g:if test="${pageProperty(name:'meta.fluidLayout')}"><g:set var="fluidLayout" value="${pageProperty(name:'meta.fluidLayout').toBoolean()}"/></g:if>
 <g:else><g:set var="fluidLayout" value="${grailsApplication.config.skin.fluidLayout?.toBoolean()}"/></g:else>
 <div class="${fluidLayout?'container-fluid':'container'}" id="main-content">
+    <plugin:isAvailable name="alaAdminPlugin">
+        <ala:systemMessage/>
+    </plugin:isAvailable>
     <g:layoutBody />
 </div><!--/.container-->
 
