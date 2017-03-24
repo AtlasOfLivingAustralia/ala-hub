@@ -151,7 +151,7 @@ environments {
         grails.serverURL = 'http://dev.ala.org.au:8080/' + appName
 //        security.cas.appServerName = serverName
 //        security.cas.contextPath = "/${appName}"
-        //grails.resources.debug = true // cache & resources plugins
+          //grails.resources.debug = true // cache & resources plugins
     }
     test {
 //        grails.serverURL = 'http://130.220.209.134:8080/'
@@ -201,7 +201,7 @@ log4j = {
             'grails.app.taglib.org.grails.plugin.resource',
             'grails.app.resourceMappers.org.grails.plugin.resource'
 
-    debug   'grails.app','au.org.ala.cas','au.org.ala.biocache'
+    debug   'grails.app','au.org.ala.cas','au.org.ala.biocache', 'grails.plugin.cache'
 }
 
 //Restrict sandbox data access to drts by userid or admin
