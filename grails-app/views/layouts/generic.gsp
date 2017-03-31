@@ -11,7 +11,7 @@
     <hf:head/>
 </head>
 <body class="${pageProperty(name:'body.class')?:'nav-datasets'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
-<alatag:outageBanner />
+<ala:systemMessage/>
 <g:set var="fluidLayout" value="${grailsApplication.config.skin.fluidLayout?.toBoolean()}"/>
 <div class="${fluidLayout?'container-fluid':'container'}" id="main-content">
     <g:layoutBody />
