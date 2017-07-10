@@ -4,9 +4,12 @@
     display: none;
 }
 
-#main-content {
+#main #main-content {
+    margin-top: 10px;
     margin-bottom: 5em;
 }
+
+.explore-your-area #header { display: none; }
 
 #content .nav-tabs li:not(.active)  a {
     background-color: #f2f2f2;
