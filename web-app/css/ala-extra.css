@@ -9,7 +9,7 @@
     margin-bottom: 5em;
 }
 
-.explore-your-area #header { display: none; }
+.explore-your-area #header #breadcrumb { display: none; }
 
 #content .nav-tabs li:not(.active)  a {
     background-color: #f2f2f2;
