@@ -3,8 +3,8 @@ grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 grails.project.work.dir = "target/work"
-grails.project.target.level = 1.6
-grails.project.source.level = 1.6
+grails.project.target.level = 1.8
+grails.project.source.level = 1.8
 //grails.project.war.file = "target/${appName}.war"
 
 //grails.plugin.location.'biocache-hubs' = "../biocache-hubs"
@@ -51,14 +51,14 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        build ":release:3.0.1"
+        build ":release:3.1.1"
         build ":tomcat:7.0.54"
         compile ':cache:1.1.8'
         compile ":cache-headers:1.1.6"
         compile ":geoip:0.3.3"
-        runtime ":resources:1.2.8"
+        runtime ":resources:1.2.14"
         runtime ":cached-resources:1.0"
-        runtime ":biocache-hubs:1.4.2"
+        runtime ":biocache-hubs:1.5-SNAPSHOT"
         runtime ":downloads-plugin:1.3.2"
         runtime ":ala-bootstrap2:2.5-SNAPSHOT"
         runtime ":ala-auth:1.3.4"
