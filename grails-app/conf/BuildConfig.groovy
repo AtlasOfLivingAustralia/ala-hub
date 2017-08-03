@@ -1,4 +1,4 @@
-grails.servlet.version = "2.5" // Change depending on target container compliance (2.5 or 3.0)
+grails.servlet.version = "3.0" // Change depending on target container compliance (2.5 or 3.0)
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
@@ -57,10 +57,11 @@ grails.project.dependency.resolution = {
         compile ":cache-headers:1.1.6"
         compile ":geoip:0.3.3"
         runtime ":resources:1.2.14"
+//        compile ":asset-pipeline:2.14.1"
         runtime ":cached-resources:1.0"
         runtime ":biocache-hubs:1.5-SNAPSHOT"
         runtime ":downloads-plugin:1.3.2"
-        runtime ":ala-bootstrap2:2.5-SNAPSHOT"
+        runtime ":ala-bootstrap2:2.6.0-SNAPSHOT"
         runtime ":ala-auth:1.3.4"
     }
 }
