@@ -9,11 +9,10 @@
 
     <title><g:layoutTitle /></title>
     <g:render template="/layouts/global" plugin="biocache-hubs"/>
-    
-    <%-- Do not include JS & CSS files here - add them to your app's "application" module (in "Configuration/ApplicationResources.groovy") --%>
-    <r:require modules="alaBs"/>
 
-    %{--<r:layoutResources/>--}%
+    <asset:stylesheet src="alaBs.css" />
+    <asset:javascript src="alaBs.js" />
+
     <g:layoutHead />
 </head>
 <body class="${pageProperty(name:'body.class')?:'nav-datasets'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
@@ -49,9 +48,6 @@
     <a class="btn btn-small toggleResponsive"><i class="icon-resize-full"></i> <span>Desktop</span> version</a>
     %{--<a class="btn btn-small toggleResponsive"><i class="icon-resize-full"></i> Desktop version</a>--}%
 </div>
-
-<!-- JS resources-->
-%{--<r:layoutResources/>--}%
 
 </body>
 </g:applyLayout>

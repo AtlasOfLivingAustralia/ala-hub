@@ -6,7 +6,9 @@
     <meta name="author" content="${grailsApplication.config.skin.orgNameLong}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><g:layoutTitle /></title>
-    <r:require modules="bootstrap, hubCore"/>
+    <asset:stylesheet src="alaBs.css" />
+    <asset:javascript src="alaBs.js" />
+
     <g:layoutHead />
     <hf:head/>
 </head>
@@ -15,7 +17,7 @@
 <g:set var="fluidLayout" value="${grailsApplication.config.skin.fluidLayout?.toBoolean()}"/>
 <div class="${fluidLayout?'container-fluid':'container'}" id="main-content">
     <g:layoutBody />
-</div><!--/.container-->
+</div>
 
 <div class="${fluidLayout?'container-fluid':'container'} hidden-desktop">
     <%-- Borrowed from http://marcusasplund.com/optout/ --%>
@@ -23,8 +25,6 @@
     %{--<a class="btn btn-small toggleResponsive"><i class="icon-resize-full"></i> Desktop version</a>--}%
 </div>
 
-<!-- JS resources-->
-%{--<r:layoutResources/>--}%
 
 </body>
 </g:applyLayout>

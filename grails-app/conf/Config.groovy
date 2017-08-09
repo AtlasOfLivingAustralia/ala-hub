@@ -67,6 +67,11 @@ security.cas.casServerUrlPrefix = 'https://auth.ala.org.au/cas'
 security.cas.bypass = false // set to true for non-ALA deployment
 auth.admin_role = "ROLE_ADMIN"
 
+security.cas.uriFilterPattern='/admin,/admin/.*,/download,/download/.*,/proxy/.*,/occurrences/.*,/occurrence/.*,/'
+security.cas.uriExclusionFilterPattern='/occurrences/shapeUpload,/images.*,/css.*,/js.*,.*json,/help/.*'
+security.cas.authenticateOnlyIfLoggedInFilterPattern='/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area,/query,/proxy/download/.*,/'
+
+
 skin.fluidLayout = true
 skin.useAlaSpatialPortal = true
 skin.useAlaBie = true
@@ -159,6 +164,9 @@ environments {
 //        serverName='http://130.220.209.134:8080/'
 //        security.cas.appServerName = serverName
 //        security.cas.contextPath = "/${appName}"
+
+//        security.cas.appServerName = 'http://devt.ala.org.au:8080/'
+
     }
     production {
 //        grails.serverURL = 'http://biocache.ala.org.au'
@@ -206,6 +214,6 @@ log4j = {
 }
 
 //Restrict sandbox data access to drts by userid or admin
-// uriFilterPattern=/proxy/.*,/occurrences/.*
+// security.cas.uriFilterPattern=/proxy/.*,/occurrences/.*
 // biocache.ajax.useProxy=true
 // sandbox.access.restricted=true

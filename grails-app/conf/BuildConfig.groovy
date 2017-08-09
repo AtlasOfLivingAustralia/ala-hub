@@ -9,6 +9,7 @@ grails.project.source.level = 1.8
 
 //grails.plugin.location.'biocache-hubs' = "../biocache-hubs"
 //grails.plugin.location.'downloads-plugin' = "../downloads-plugin"
+//grails.plugin.location.'images-client-plugin' = "../images-client-plugin"
 //grails.plugin.location.'ala-bootstrap2' = "../ala-bootstrap2"
 
 grails.project.fork = [
@@ -56,12 +57,12 @@ grails.project.dependency.resolution = {
         compile ':cache:1.1.8'
         compile ":cache-headers:1.1.6"
         compile ":geoip:0.3.3"
-        runtime ":resources:1.2.14"
-//        compile ":asset-pipeline:2.14.1"
-        runtime ":cached-resources:1.0"
+//        runtime ":resources:1.2.14"
+        compile ":asset-pipeline:2.14.1"
+//        runtime ":cached-resources:1.0"
         runtime ":biocache-hubs:1.5-SNAPSHOT"
-        runtime ":downloads-plugin:1.3.2"
+        runtime ":downloads-plugin:1.5-SNAPSHOT"
         runtime ":ala-bootstrap2:2.6.0-SNAPSHOT"
-        runtime ":ala-auth:1.3.4"
+        runtime ":ala-auth:2.1.3"
     }
 }
