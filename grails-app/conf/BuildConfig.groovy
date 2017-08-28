@@ -56,11 +56,10 @@ grails.project.dependency.resolution = {
         build ":tomcat:7.0.54"
         compile ':cache:1.1.8'
         compile ":cache-headers:1.1.6"
-        compile ":geoip:0.3.3"
 //        runtime ":resources:1.2.14"
         compile ":asset-pipeline:2.14.1"
 //        runtime ":cached-resources:1.0"
-        runtime ":biocache-hubs:1.5"
+        runtime ":biocache-hubs:1.6-SNAPSHOT"
         runtime ":downloads-plugin:1.5"
         runtime ":ala-bootstrap2:2.6.0-SNAPSHOT"
         runtime ":ala-auth:2.1.3"
