@@ -14,7 +14,7 @@ if(inplace) {
     include ':biocache-hubs'
     project(':biocache-hubs').projectDir = new File(settingsDir,'../biocache-hubs')
 
-    include ':ala-ws-plugin'
-    project(':ala-ws-plugin').projectDir = new File(settingsDir,'../ala-ws-plugin')
+//    include ':ala-ws-plugin'
+//    project(':ala-ws-plugin').projectDir = new File(settingsDir,'../ala-ws-plugin')
 
 }

@@ -57,7 +57,7 @@ if(inplace) {
             compile project(':ala-charts-plugin')
             compile project(':images-client-plugin')
 
-            runtime project(':ala-ws-plugin')
+//            runtime project(':ala-ws-plugin')
 
         }
     }
@@ -91,7 +91,7 @@ dependencies {
 
     // Plugins
     compile 'org.grails.plugins:external-config:1.1.1'
-    compile 'org.grails.plugins:cache:4.0.0'
+//    compile 'org.grails.plugins:cache:4.0.0'
     compile 'org.grails.plugins:cache-ehcache:3.0.0.M1'
     runtime "org.grails.plugins:ala-bootstrap3:3.0.0-SNAPSHOT"
     compile "org.grails.plugins:ala-auth:3.0.2"
