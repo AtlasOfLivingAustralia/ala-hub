@@ -45,7 +45,7 @@ bootRepackage {
 // Inplace plugin config
 
 // Set to true it needed only for development
-boolean inplace = true
+boolean inplace = false
 
 if(inplace) {
     grails {
@@ -56,9 +56,7 @@ if(inplace) {
             // When not inplace used, the pependencies below are managed by biocache-hubs plugin
             compile project(':ala-charts-plugin')
             compile project(':images-client-plugin')
-
 //            runtime project(':ala-ws-plugin')
-
         }
     }
 }
