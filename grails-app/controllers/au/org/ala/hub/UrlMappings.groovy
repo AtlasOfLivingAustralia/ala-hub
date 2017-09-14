@@ -1,4 +1,4 @@
-package au.org.ala.hub.hub
+package au.org.ala.hub
 
 class UrlMappings {
 

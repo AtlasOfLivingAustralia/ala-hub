@@ -1,6 +1,6 @@
-package au.org.ala.hub.hub
+package au.org.ala.hub
 
-
+import au.org.ala.hub.SecureSandboxInterceptor
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 
@@ -17,11 +17,19 @@ class SecureSandboxInterceptorSpec extends Specification {
 
     }
 
-    void "Test secureSandboxFilters interceptor matching"() {
+    void "Test secureSandbox interceptor matching proxy"() {
         when:"A request matches the interceptor"
-            withRequest(controller:"secureSandboxFilters")
+            withRequest(controller:"proxy")
 
         then:"The interceptor does match"
             interceptor.doesMatch()
+    }
+
+    void "Test secureSandbox interceptor matching occurrence"() {
+        when:"A request matches the interceptor"
+        withRequest(controller:"occurrence")
+
+        then:"The interceptor does match"
+        interceptor.doesMatch()
     }
 }

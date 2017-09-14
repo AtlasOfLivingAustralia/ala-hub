@@ -1,4 +1,4 @@
-package au.org.ala.hub.hub
+package au.org.ala.hub
 
 import groovy.util.logging.Slf4j
 
@@ -16,7 +16,7 @@ class SecureSandboxInterceptor {
         if (grailsApplication.config.sandbox.access.restricted?.toString()?.toBoolean()) {
             def isAdmin = request.isUserInRole(grailsApplication.config.auth.admin_role)
             if (isAdmin) {
-                return true;
+                return true
             }
 
             def userId = authService.getUserId()
