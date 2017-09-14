@@ -10,7 +10,7 @@
     <asset:javascript src="alaBs.js" />
 
     <g:layoutHead />
-    <hf:head/>
+    %{--<hf:head/>--}%
 </head>
 <body class="${pageProperty(name:'body.class')?:'nav-datasets'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
 <ala:systemMessage/>
