@@ -12,7 +12,7 @@ final APPENDER = 'APP_APPENDER'
 switch (Environment.current) {
     case Environment.PRODUCTION:
         appender(APPENDER, RollingFileAppender) {
-            file = "$loggingDir/$appName.log"
+            file = "$loggingDir/${appName}.log"
             encoder(PatternLayoutEncoder) {
                 pattern =
                         '%d{yyyy-MM-dd HH:mm:ss.SSS} ' + // Date
@@ -22,7 +22,7 @@ switch (Environment.current) {
                                 '%m%n%wex' // Message
             }
             rollingPolicy(FixedWindowRollingPolicy) {
-                fileNamePattern = "$loggingDir/$appName.%i.log.gz"
+                fileNamePattern = "$loggingDir/${appName}.%i.log.gz"
                 minIndex=1
                 maxIndex=4
             }
@@ -33,7 +33,7 @@ switch (Environment.current) {
         break
     case Environment.TEST:
         appender(APPENDER, RollingFileAppender) {
-            file = "$loggingDir/$appName.log"
+            file = "$loggingDir/${appName}.log"
             encoder(PatternLayoutEncoder) {
                 pattern =
                         '%d{yyyy-MM-dd HH:mm:ss.SSS} ' + // Date
@@ -43,7 +43,7 @@ switch (Environment.current) {
                                 '%m%n%wex' // Message
             }
             rollingPolicy(FixedWindowRollingPolicy) {
-                fileNamePattern = "$loggingDir/$appName.%i.log.gz"
+                fileNamePattern = "$loggingDir/${appName}.%i.log.gz"
                 minIndex=1
                 maxIndex=4
             }
