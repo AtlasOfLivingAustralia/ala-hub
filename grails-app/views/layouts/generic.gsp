@@ -19,10 +19,10 @@
     <g:layoutBody />
 </div>
 
-<div class="${fluidLayout?'container-fluid':'container'} hidden-desktop">
+<div class="${fluidLayout?'container-fluid':'container'} hidden-lg">
     <%-- Borrowed from http://marcusasplund.com/optout/ --%>
-    <a class="btn btn-small toggleResponsive"><i class="icon-resize-full"></i> <span>Desktop</span> version</a>
-    %{--<a class="btn btn-small toggleResponsive"><i class="icon-resize-full"></i> Desktop version</a>--}%
+    <a class="btn toggleResponsive btn-default btn-sm"><i class="icon-resize-full"></i> <span>Desktop</span> version</a>
+    %{--<a class="btn toggleResponsive btn-default btn-sm"><i class="icon-resize-full"></i> Desktop version</a>--}%
 </div>
 
 
