@@ -36,12 +36,6 @@
     </section>
 </g:if>
 <!-- End Breadcrumb -->
-<div class="${fluidLayout?'container-fluid':'container'}" id="main-content">
-    <plugin:isAvailable name="alaAdminPlugin">
-        <ala:systemMessage/>
-    </plugin:isAvailable>
-    <g:layoutBody />
-</div><!--/.container-->
 
 <div class="${fluidLayout?'container-fluid':'container'} hidden-desktop">
     <%-- Borrowed from http://marcusasplund.com/optout/ --%>
