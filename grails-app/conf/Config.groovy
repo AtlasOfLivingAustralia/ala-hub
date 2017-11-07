@@ -35,7 +35,7 @@ skin.orgNameLong = "Atlas of Living Australia"
 skin.orgNameShort = "ALA"
 // whether crumb trail should include a home link that is external to this webabpp - ala.baseUrl is used if true
 skin.includeBaseUrl = true
-skin.taxaLinks.baseUrl = "http://bie.ala.org.au/species/"
+skin.taxaLinks.baseUrl = "https://bie.ala.org.au/species/"
 skin.headerUrl = "classpath:resources/generic-header.jsp" // can be external URL
 skin.footerUrl = "classpath:resources/generic-footer.jsp" // can be external URL
 skin.fluidLayout = true // true or false
@@ -54,9 +54,9 @@ skin.exploreUrl = "https://www.ala.org.au/explore-by-location/"
  *
  *  NOTE: Some of these will be ignored if default_config exists
 \******************************************************************************/
-grails.serverURL = 'http://biocache.ala.org.au'
-serverName = 'http://biocache.ala.org.au'
-security.cas.appServerName = "http://biocache.ala.org.au"
+grails.serverURL = 'https://biocache.ala.org.au'
+serverName = 'https://biocache.ala.org.au'
+security.cas.appServerName = "https://biocache.ala.org.au"
 security.cas.casServerName = 'https://auth.ala.org.au'
 security.cas.uriFilterPattern = '/admin, /admin/.*'
 security.cas.authenticateOnlyIfLoggedInPattern = "/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area"
@@ -75,7 +75,7 @@ security.cas.authenticateOnlyIfLoggedInFilterPattern='/occurrences/(?!.+userAsse
 skin.fluidLayout = true
 skin.useAlaSpatialPortal = true
 skin.useAlaBie = true
-skin.taxaLinks.baseUrl = "http://bie.ala.org.au/species/" // 3rd party species pages. Leave blank for no links
+skin.taxaLinks.baseUrl = "https://bie.ala.org.au/species/" // 3rd party species pages. Leave blank for no links
 test.var = "ala-hub"
 
 // facets.includeDynamicFacets = true // for sandbox
@@ -169,8 +169,8 @@ environments {
 
     }
     production {
-//        grails.serverURL = 'http://biocache.ala.org.au'
-//        serverName='http://biocache.ala.org.au'
+//        grails.serverURL = 'https://biocache.ala.org.au'
+//        serverName='https://biocache.ala.org.au'
 //        security.cas.appServerName = serverName
 //        security.cas.contextPath = ""
     }
