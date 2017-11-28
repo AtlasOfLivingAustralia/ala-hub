@@ -54,11 +54,13 @@ switch (Environment.current) {
         break
     case Environment.DEVELOPMENT:
         [
-                (DEBUG): [ // DEBUG and TRACE should ohly be enabled for non-production environments
+                (DEBUG): [ // DEBUG and TRACE should only be enabled for non-production environments
 //                           'grails.app',
                            'au.org.ala.cas',
                            'au.org.ala.hub',
-                            'org.grails.plugins'
+                           'au.org.ala.bootstrap3',
+                           'grails.app',
+                           'org.grails.plugins'
                 ],
                 (TRACE): [
                 ]
@@ -98,7 +100,7 @@ root(WARN, [APPENDER])
                 'grails.plugin.externalconfig.ExternalConfig',
                 'au.org.ala'
         ],
-        (DEBUG): [ // DEBUG and TRACE should ohly be enabled for non-production environments
+        (DEBUG): [ // DEBUG and TRACE should only be enabled for non-production environments
         ],
         (TRACE): [
         ]

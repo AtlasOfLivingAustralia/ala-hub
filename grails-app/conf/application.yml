@@ -5,6 +5,7 @@ grails:
         defaultPackage: au.org.ala.hub
     config:
         locations:
+            - classpath:plugin.groovy # biocache-hubs
             - file:/data/ala-hub/config/ala-hub-config.properties
             - file:/data/ala-hub/config/ala-hub-config.yml
             - file:/data/ala-hub/config/ala-hub-config.groovy

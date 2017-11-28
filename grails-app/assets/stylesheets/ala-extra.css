@@ -5,8 +5,13 @@
 }
 
 #main #main-content {
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     margin-bottom: 5em;
+}
+
+#listHeader h1 {
+    margin: 20px 0 15px 0;
+    font-size: 26px;
 }
 
 .explore-your-area #header #breadcrumb { display: none; }
@@ -56,13 +61,34 @@ body #main-content #customiseFacetsButton > .dropdown-menu, #main-content #resul
     background: url('images/checkbox-checked.png') no-repeat left top;
 }
 
+/*.table-bordered {*/
+    /*border: 1px solid #ddd;*/
+/*}*/
+/*.table-bordered > thead > tr > th,*/
+/*.table-bordered > tbody > tr > th,*/
+/*.table-bordered > tfoot > tr > th,*/
+/*.table-bordered > thead > tr > td,*/
+/*.table-bordered > tbody > tr > td,*/
+/*.table-bordered > tfoot > tr > td {*/
+    /*border: 1px solid #ddd;*/
+/*}*/
+
+.well {
+    background-image:none;
+}
+
 /* anchor offset for floating header */
 :target:before {
     content:"";
     display:block;
-    height:67px; /* fixed header height*/
-    margin:-67px 0 0; /* negative fixed header height */
+    height:94px; /* fixed header height*/
+    margin:-94px 0 0; /* negative fixed header height */
 }
+
+.breadcrumb-list {
+    margin-left: 25px;
+}
+
 
 /* Media rules */
 @media only screen and (max-width : 992px) {
