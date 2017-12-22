@@ -16,7 +16,6 @@
 
     <asset:stylesheet src="alaBs.css" />
     <asset:javascript src="alaBs.js" />
-    <asset:javascript src="hubCore.css" />
 
     <g:layoutHead />
 
