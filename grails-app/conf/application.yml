@@ -89,6 +89,7 @@ grails:
                 taglib: none
                 staticparts: none
 endpoints:
+    enabled: true
     jmx:
         unique-names: true
 ---
