@@ -28,6 +28,7 @@ info:
         name: '@info.app.name@'
         version: '@info.app.version@'
         grailsVersion: '@info.app.grailsVersion@'
+        description: 'Atlas of Living Australia'
 spring:
     main:
         banner-mode: "off"
