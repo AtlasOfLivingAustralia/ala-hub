@@ -99,20 +99,9 @@ privacyPolicy: "http://www.ala.org.au/about/terms-of-use/privacy-policy/"
 
 security:
     cas:
-        appServerName: 'https://biocache.ala.org.au'
-        casServerName: 'https://auth.ala.org.au'
-        authenticateOnlyIfLoggedInPattern: "/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area,/query,/proxy/download/.*,/"
-        casServerUrlPrefix: 'https://auth.ala.org.au/cas'
-        # set to true for non-ALA deployment
-        bypass: 'false'
-        uriFilterPattern: '/admin.*,/alaAdmin.*,/download.*'
-        uriExclusionFilterPattern: '/occurrences/shapeUpload,/images.*,/css.*,/js.*,.*json,/help/.*'
-        authenticateOnlyIfLoggedInFilterPattern: '/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area,/query,/proxy/download/.*'
+        uriFilterPattern: '/admin/.*,/registration/editAccount,/my-profile,/my-profile/,/myprofile/,/myprofile,/profile/.*,/admin/,/admin,/registration/update,/registration/update/.*,/monitoring,/monitoring/*,/registration/disableAccount/.*,/registration/disableAccount,/admin/admin/downloadUsersCsvFile,/alaAdmin.*'
+
 server:
-    tomcat:
-        port-header: 'X-Forwarded-Port'
-        protocol-header: 'X-Forwarded-Proto'
-        remote-ip-header: 'X-Forwarded-For'
     contextPath: /ala-hub
 
 environments:

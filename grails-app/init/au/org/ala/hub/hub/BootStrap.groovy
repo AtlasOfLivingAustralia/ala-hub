@@ -10,6 +10,9 @@ class BootStrap {
         log.warn "config.serverName = ${grailsApplication.config.serverName}"
         log.warn "config.grails.serverURL = ${grailsApplication.config.grails.serverURL}"
         log.warn "config.headerAndFooter.baseURL = ${grailsApplication.config.headerAndFooter.baseURL}"
+
+        //set the configured default locale
+        Locale.setDefault(Locale.forLanguageTag(grailsApplication.config.defaultLocale?:'en'))
     }
     def destroy = {
     }
