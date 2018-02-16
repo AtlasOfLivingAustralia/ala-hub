@@ -15,7 +15,7 @@ plugins {
     id "com.gorylenko.gradle-git-properties" version "1.4.17"
 }
 
-version "3.0"
+version "3.0.1"
 group "au.org.ala"
 
 apply plugin:"eclipse"
@@ -107,7 +107,7 @@ dependencies {
     if(!inplace) {
         runtime "au.org.ala.plugins.grails:biocache-hubs:2.0", noCache
         runtime "au.org.ala.plugins.grails:downloads-plugin:2.0", noCache
-        runtime "org.grails.plugins:ala-bootstrap3:3.0.1", noCache
+        runtime "org.grails.plugins:ala-bootstrap3:3.0.4", noCache
     }
 }
 
