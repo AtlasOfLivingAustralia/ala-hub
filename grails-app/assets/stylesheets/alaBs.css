@@ -10,4 +10,6 @@
  * // require bootstrap
  *= require hubCore
  *= require ala-extra.css
+ *= require autocomplete.css
+ *= require base.css
  */

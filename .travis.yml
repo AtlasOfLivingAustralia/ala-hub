@@ -7,13 +7,19 @@ branches:
   - master
   - hotfix
   - grails-jdk-upgrade
-before_install:
- - wget -q https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/ala_common.sh
- - chmod +x ala_common.sh
- - source ./ala_common.sh
- - ala_travis_grails_setup_env
-script:
- - ala_travis_grails_build
+  - bs3-with-grails3
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.gradle/caches/
+  - $HOME/.gradle/wrapper/
+
+after_success:
+  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && travis_retry ./gradlew publish'
 env:
   global:
   - secure: XuqIReYymPo+LQWKa1mRm0rollfvmVYV4+Hx0lMcunbu3eNsFc5GrRmocpo2r2z0N5bbV/0tHTQXylyvvvKaEFvbRx7KGh/tZI8/EOrouwQ9CG1YMJP33Kn4kOmETP5EO69RoMqBgsaMr3EFc1z/EI38lZWLR9kcA/awwBCAMZ0=
