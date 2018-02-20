@@ -58,19 +58,11 @@ grails.serverURL = 'https://biocache.ala.org.au'
 serverName = 'https://biocache.ala.org.au'
 security.cas.appServerName = "https://biocache.ala.org.au"
 security.cas.casServerName = 'https://auth.ala.org.au'
-security.cas.uriFilterPattern = '/admin, /admin/.*'
-security.cas.authenticateOnlyIfLoggedInPattern = "/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area"
-security.cas.uriExclusionFilterPattern = '/images.*,/css.*,/js.*'
 security.cas.loginUrl = 'https://auth.ala.org.au/cas/login'
 security.cas.logoutUrl = 'https://auth.ala.org.au/cas/logout'
 security.cas.casServerUrlPrefix = 'https://auth.ala.org.au/cas'
 security.cas.bypass = false // set to true for non-ALA deployment
 auth.admin_role = "ROLE_ADMIN"
-
-security.cas.uriFilterPattern='/admin,/admin/.*,/download,/download/.*,/proxy/.*,/occurrences/.*,/occurrence/.*,/'
-security.cas.uriExclusionFilterPattern='/occurrences/shapeUpload,/images.*,/css.*,/js.*,.*json,/help/.*'
-security.cas.authenticateOnlyIfLoggedInFilterPattern='/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area,/query,/proxy/download/.*,/'
-
 
 skin.fluidLayout = true
 skin.useAlaSpatialPortal = true

@@ -3,11 +3,10 @@
 
 **ala-hub** is a Grails applications that provides the main view for the _Atlas of Living Australia_(ALA) [Occurrence search portal](http://biocache.ala.org.au/search) using [biocache-hub](https://github.com/AtlasOfLivingAustralia/biocache-hubs/) front-end.
 
+## Versions
 The grails2 branch contains the 2.4.x series of the app compatible with Grails 2.x
 
 The master branch hosts version 3.x and forward of the app compatible with grails 3.x
-
-
 
 
 ## Geolite2 City Database
