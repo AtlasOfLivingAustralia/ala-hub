@@ -99,7 +99,9 @@ privacyPolicy: "http://www.ala.org.au/about/terms-of-use/privacy-policy/"
 
 security:
     cas:
-        uriFilterPattern: '/admin/.*,/registration/editAccount,/my-profile,/my-profile/,/myprofile/,/myprofile,/profile/.*,/admin/,/admin,/registration/update,/registration/update/.*,/monitoring,/monitoring/*,/registration/disableAccount/.*,/registration/disableAccount,/admin/admin/downloadUsersCsvFile,/alaAdmin.*'
+        uriFilterPattern: '/admin.*,/alaAdmin.*,/download.*'
+        authenticateOnlyIfLoggedInPattern: '/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area,/query,/proxy/download/.*'
+        uriExclusionFilterPattern: '/occurrences/shapeUpload,/images.*,/css.*,/js.*,.*json,/help/.*'
 
 server:
     contextPath: /ala-hub
