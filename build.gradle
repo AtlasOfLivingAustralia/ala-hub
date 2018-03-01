@@ -105,8 +105,8 @@ dependencies {
     compile "org.grails.plugins:ala-auth:3.0.2", noCache
 
     if(!inplace) {
-        runtime "au.org.ala.plugins.grails:biocache-hubs:2.0.1", noCache
-        runtime "au.org.ala.plugins.grails:downloads-plugin:2.0", noCache
+        runtime "au.org.ala.plugins.grails:biocache-hubs:2.0.2-SNAPSHOT", noCache
+        runtime "au.org.ala.plugins.grails:downloads-plugin:2.0.1-SNAPSHOT", noCache
         runtime "org.grails.plugins:ala-bootstrap3:3.0.4", noCache
     }
 }
