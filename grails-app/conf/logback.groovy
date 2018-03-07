@@ -62,9 +62,8 @@ switch (Environment.current) {
                            'au.org.ala.biocache.hubs',
                            'au.org.ala.downloads',
                            'au.org.ala.downloads.plugin',
-                           'grails.app',
+//                           'grails.app',
                            'org.grails.plugins',
-                           'grails.plugin.cache'
                 ],
                 (TRACE): [
                 ]
