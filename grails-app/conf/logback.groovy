@@ -62,7 +62,7 @@ switch (Environment.current) {
                            'au.org.ala.biocache.hubs',
                            'au.org.ala.downloads',
                            'au.org.ala.downloads.plugin',
-//                           'grails.app',
+                           'grails.app',
                            'org.grails.plugins',
                 ],
                 (TRACE): [
@@ -101,9 +101,10 @@ root(WARN, [APPENDER])
         ],
         (INFO): [
                 'grails.plugin.externalconfig.ExternalConfig',
-                'au.org.ala'
+//                'au.org.ala'
         ],
         (DEBUG): [ // DEBUG and TRACE should only be enabled for non-production environments
+                   'au.org.ala'
         ],
         (TRACE): [
         ]
