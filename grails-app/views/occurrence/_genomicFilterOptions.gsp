@@ -21,40 +21,29 @@
 <asset:script>
 
      $(document).ready(function() {
-        <g:each in="${facetFromGroup.keySet()}" var="facetName">
-            <g:set var="facetResult" value="${facetFromGroup.get(facetName)}"/>
-            <g:each var="result" in="${facetResult}">
 
-                $("[name='${result.label}']").bootstrapSwitch({
-                    size: "mini",
-                    onText: "No",
-                    onColor: "primary",
-                    offText: "Yes",
-                    offColor: "success",
-                    animate: false,
-                    onSwitchChange: function(event, state) {
-                        console.log("switch toggled", state);
-                        console.log("value", "${result.fq}" );
-
-                 //     MAP_VAR.map.spin(true);
-                        if (!state) {
-                            removeFacetFilterFromParam('${result.fq.encodeAsRaw()}');
+            $("[class='genomicFacetInput']").bootstrapSwitch({
+                size: "mini",
+                onText: "No",
+                onColor: "primary",
+                offText: "Yes",
+                offColor: "success",
+                animate: false,
+                onSwitchChange: function(event, data) {
+                    console.log (this);
+                    console.log (data);
+                    if (!data) {
+                        removeFacetFilterFromParam(this.name);
+                    } else {
+                        if (this.value == 'Unknown') {
+                            reloadWithParam('fq', this.name );
                         } else {
-                            if ('${result.label}' == 'Unknown') {
-                                reloadWithParam('fq', '${result.fq.encodeAsRaw()}' );
-                            } else {
-                              reloadWithParam('fq', '-${result.fq.encodeAsRaw()}' );
-                            }
+                          reloadWithParam('fq', '-' + this.name );
                         }
-                    },
-                    handleChange: function (event, state) {
-                        console.log(state);
-                        //this.setState({storyStatus: state});
                     }
-                });
-            </g:each>
+                }
 
-        </g:each>
+            });
     });
 
 </asset:script>
