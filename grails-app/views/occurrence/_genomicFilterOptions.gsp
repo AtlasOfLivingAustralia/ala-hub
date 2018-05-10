@@ -40,7 +40,11 @@
                     console.log (this);
                     console.log (data);
                     if (!data) {
-                        removeFacetFilterFromParam(this.name);
+                        if (this.value == 'Unknown') {
+                            removeFacetFilterFromParam(this.name);
+                        } else {
+                            removeFacetFilterFromParam("-" + this.name);
+                        }
                     } else {
                         if (this.value == 'Unknown') {
                             reloadWithParam('fq', this.name );
