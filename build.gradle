@@ -103,7 +103,7 @@ dependencies {
 
     if(!inplace) {
         runtime "au.org.ala.plugins.grails:biocache-hubs:2.0.3-SNAPSHOT", noCache
-        runtime "au.org.ala.plugins.grails:downloads-plugin:2.0.2-SNAPSHOT", noCache
+        runtime "au.org.ala.plugins.grails:downloads-plugin:2.0.3", noCache
     }
 
     runtime "org.grails.plugins:ala-bootstrap3:3.0.4", noCache
