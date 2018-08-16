@@ -15,7 +15,7 @@ plugins {
     id "com.gorylenko.gradle-git-properties" version "1.4.17"
 }
 
-version "3.0.6-SNAPSHOT"
+version "3.0.6"
 group "au.org.ala"
 
 apply plugin:"eclipse"
@@ -106,7 +106,7 @@ dependencies {
         runtime "au.org.ala.plugins.grails:downloads-plugin:2.0.4", noCache
     }
 
-    runtime "org.grails.plugins:ala-bootstrap3:3.0.4", noCache
+    runtime "org.grails.plugins:ala-bootstrap3:3.0.6", noCache
 }
 
 bootRun {
