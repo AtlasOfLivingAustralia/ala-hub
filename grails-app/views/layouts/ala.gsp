@@ -9,7 +9,6 @@
     <meta name="breadcrumbs" content="${pageProperty(name:'meta.breadcrumbs')}">
     <meta name="breadcrumbParent" content="${pageProperty(name:'meta.breadcrumbParent')}">
     <meta name="hideBreadcrumb" content="${pageProperty(name:'meta.hideBreadcrumb')}">
-    <link href="http://www.ala.org.au/wp-content/themes/ala2011/images/favicon.ico" rel="shortcut icon"  type="image/x-icon"/>
 
     <title><g:layoutTitle /></title>
     <g:render template="/layouts/global" plugin="biocache-hubs"/>
