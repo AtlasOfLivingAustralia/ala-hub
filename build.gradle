@@ -99,7 +99,7 @@ dependencies {
 
     // Plugins
     compile 'org.grails.plugins:external-config:1.1.1'
-    compile "org.grails.plugins:ala-auth:3.0.2", noCache
+    compile "org.grails.plugins:ala-auth:3.1.0", noCache
 
     if(!inplace) {
         runtime "au.org.ala.plugins.grails:biocache-hubs:2.0.9-SNAPSHOT", noCache
