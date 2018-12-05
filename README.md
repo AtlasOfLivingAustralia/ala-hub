@@ -16,7 +16,6 @@ The search, is performed on best effort and will be used only if the Google Maps
 
 MaxMind performs updates to the database roughly every month, if you want to update the database in your deployment, you can perform the following commands on your ALA Hub ansible playbook. 
 
-
 ```
 $ cd ala-install/ansible  
 $ ansible-playbook -i inventories/vagrant/ala-hub-vagrant ala-hub-standalone.yml --private-key ~/.vagrant.d/insecure_private_key --user vagrant --sudo  --tags="geolite_db,setfacts" 
