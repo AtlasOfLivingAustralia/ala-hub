@@ -9,8 +9,8 @@ if (inplace) {
 //    project(':ala-charts-plugin').projectDir = new File(settingsDir,'../ala-charts-plugin')
 //    include ':images-client-plugin'
 //    project(':images-client-plugin').projectDir = new File(settingsDir,'../images-client-plugin')
-    include ':downloads-plugin'
-    project(':downloads-plugin').projectDir = new File(settingsDir,'../downloads-plugin')
+//    include ':downloads-plugin'
+//    project(':downloads-plugin').projectDir = new File(settingsDir,'../downloads-plugin')
 //    include ':ala-bootstrap3'
 //    project(':ala-bootstrap3').projectDir = new File(settingsDir,'../ala-bootstrap3')
     include ':biocache-hubs'
