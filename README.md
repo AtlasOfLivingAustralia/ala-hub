@@ -1,7 +1,7 @@
 # ala-hub   [![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/ala-hub)
  
 
-**ala-hub** is a Grails applications that provides the main view for the _Atlas of Living Australia_(ALA) [Occurrence search portal](http://biocache.ala.org.au/search) using [biocache-hub](https://github.com/AtlasOfLivingAustralia/biocache-hubs/) front-end.
+**ala-hub** is a Grails applications that provides the main view for the _Atlas of Living Australia_(ALA) [Occurrence search portal](http://biocache.ala.org.au/search) using [biocache-hub](https://github.com/AtlasOfLivingAustralia/biocache-hubs/)  (Grails plugin) front-end.
 
 ## Versions
 The grails2 branch contains the 2.4.x series of the app compatible with Grails 2.x
