@@ -1,12 +1,4 @@
-/* ALA CSS file */
-body.fluid .container.container-navbar,
-body.fluid #breadcrumb .container,
-body.fluid .alert.alert-creativecommons .container,
-body.fluid footer .container {
-    width: auto;
-    max-width: none;
-}
-
+/*!* ALA CSS file *!*/
 body.fluid #breadcrumb .breadcrumb-list {
     margin-left: 15px;
 }
