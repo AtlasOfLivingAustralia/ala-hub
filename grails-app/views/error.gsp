@@ -7,20 +7,34 @@
 </head>
 <body>
 <h1>
-    An error has occurred
+    Application error
 </h1>
 <g:if env="development">
-    <g:renderException exception="${exception}" />
+    <ul class="errors">
+        <g:if test="${Throwable.isInstance(exception)}">
+            <li><g:renderException exception="${exception}" /></li>
+        </g:if>
+        <g:elseif test="${flash.message}">
+            <li>${alatag.stripApiKey(message: flash.message)}</li>
+        </g:elseif>
+        <g:else>
+            <li>An error has occurred</li>
+            <li>Exception: ${exception}</li>
+            <li>Message: ${message}</li>
+            <li>Path: ${path}</li>
+        </g:else>
+    </ul>
 </g:if>
 <g:else>
-    <ul class="errors">
-        <li>Error: unknown</li>
-    </ul>
+    <g:if test="${flash.message}">
+        <ul class="errors">
+            <li>${alatag.stripApiKey(message: flash.message)}</li>
+        </ul>
+    </g:if>
 </g:else>
-<g:if test="${flash.message}">
-    <ul class="errors">
-        <li>${flash.message}</li>
-    </ul>
-</g:if>
+<ul class="errors">
+    <li>If this problem persists, please send an email to <a href="mailto:support@ala.org.au?subject=Reporting error on page: ${request.serverName}${request.forwardURI}">support@ala.org.au</a> and include the URL to this page.</li>
+</ul>
+
 </body>
 </html>
