@@ -47,14 +47,14 @@ bootRepackage {
 // Inplace plugin config
 
 // Set to true it needed only for development
-boolean inplace = false
+boolean inplace = true
 
 if (inplace) {
     grails {
         exploded = true
         plugins {
             compile project(':biocache-hubs')
-            compile project(':downloads-plugin')
+            //compile project(':downloads-plugin')
             // When not inplace used, the pependencies below are managed by biocache-hubs plugin
 //            compile project(':ala-charts-plugin')
 //            compile project(':images-client-plugin')
@@ -78,14 +78,25 @@ dependencies {
     provided "org.springframework.boot:spring-boot-starter-tomcat"
     compile "org.grails:grails-dependencies", noCache
     compile "org.grails:grails-web-boot"
+    compile "org.grails:grails-logging"
+    compile "org.grails:grails-plugin-rest"
+    compile "org.grails:grails-plugin-databinding"
+    compile "org.grails:grails-plugin-i18n"
+    compile "org.grails:grails-plugin-services"
+    compile "org.grails:grails-plugin-url-mappings"
+    compile "org.grails:grails-plugin-interceptors"
     compile "org.grails.plugins:cache"
+    compile "org.grails.plugins:async"
     compile "org.grails.plugins:scaffolding"
+    compile "org.grails.plugins:events"
     compile "org.grails.plugins:hibernate5"
-    compile "org.hibernate:hibernate-core:5.1.3.Final"
-    compile 'org.grails.plugins:external-config:1.1.1'
+    compile "org.grails.plugins:converters"
+    compile "org.hibernate:hibernate-core:5.1.16.Final"
+    compile "org.grails.plugins:gsp"
     console "org.grails:grails-console"
+    compile 'org.grails.plugins:external-config:1.1.1'
     profile "org.grails.profiles:web"
-    runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.14.2"
+    runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.15.1"
     runtime "com.h2database:h2"
     testCompile "org.grails:grails-plugin-testing"
     testCompile "org.grails.plugins:geb"
@@ -100,10 +111,10 @@ dependencies {
     compile "org.grails.plugins:ala-auth:3.1.0", noCache
     runtime "org.grails.plugins:ala-bootstrap3:3.2.0", noCache
     compile "org.grails.plugins:ala-admin-plugin:2.2", noCache
+    compile "au.org.ala.plugins.grails:downloads-plugin:2.0.9", noCache
 
     if (!inplace) {
-        runtime "au.org.ala.plugins.grails:biocache-hubs:2.1.3", noCache
-        compile "au.org.ala.plugins.grails:downloads-plugin:2.0.9", noCache
+        compile "au.org.ala.plugins.grails:biocache-hubs:2.1.4-SNAPSHOT", noCache
     }
 }
 
