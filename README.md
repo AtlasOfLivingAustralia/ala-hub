@@ -8,7 +8,6 @@ The grails2 branch contains the 2.4.x series of the app compatible with Grails 2
 
 The master branch hosts version 3.x and forward of the app compatible with grails 3.x
 
-
 ## Geolite2 City Database
 ALA Hub is the only Biocache Hub that uses the [MaxMind GeoIP 2 City Database](https://dev.maxmind.com/geoip/geoip2/geolite2/) to find the approximate user location based on IP Address, as a fallback to using the browser's JavaScript location lookup.
 
