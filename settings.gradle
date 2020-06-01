@@ -5,6 +5,8 @@ rootProject.name='ala-hub'
 boolean inplace = false
 
 if (inplace) {
+    include ':biocache-hubs'
+    project(':biocache-hubs').projectDir = new File(settingsDir,'../biocache-hubs')
 //    include ':ala-charts-plugin'
 //    project(':ala-charts-plugin').projectDir = new File(settingsDir,'../ala-charts-plugin')
 //    include ':images-client-plugin'
@@ -13,9 +15,6 @@ if (inplace) {
 //    project(':downloads-plugin').projectDir = new File(settingsDir,'../downloads-plugin')
 //    include ':ala-bootstrap3'
 //    project(':ala-bootstrap3').projectDir = new File(settingsDir,'../ala-bootstrap3')
-    include ':biocache-hubs'
-    project(':biocache-hubs').projectDir = new File(settingsDir,'../biocache-hubs')
-
 //    include ':ala-ws-plugin'
 //    project(':ala-ws-plugin').projectDir = new File(settingsDir,'../ala-ws-plugin')
 
