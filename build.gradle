@@ -55,7 +55,7 @@ if (inplace) {
         plugins {
             // When not inplace used, the dependencies below are managed by biocache-hubs plugin
             compile project(':biocache-hubs')
-//            compile project(':downloads-plugin')
+            compile project(':downloads-plugin')
 //            compile project(':ala-charts-plugin')
 //            compile project(':images-client-plugin')
 //            compile project(':ala-bootstrap3')
@@ -100,10 +100,10 @@ dependencies {
     compile "org.grails.plugins:ala-auth:3.1.0", noCache
     compile "org.grails.plugins:ala-bootstrap3:3.2.0", noCache
     compile "org.grails.plugins:ala-admin-plugin:2.2", noCache
-    compile "au.org.ala.plugins.grails:downloads-plugin:2.0.10", noCache
 
     if (!inplace) {
         compile "au.org.ala.plugins.grails:biocache-hubs:2.1.7", noCache
+        compile "au.org.ala.plugins.grails:downloads-plugin:2.1.0-SNAPSHOT", noCache
     }
 }
 
