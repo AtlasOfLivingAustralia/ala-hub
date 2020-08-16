@@ -55,7 +55,7 @@ if (inplace) {
         plugins {
             // When not inplace used, the dependencies below are managed by biocache-hubs plugin
             compile project(':biocache-hubs')
-//            compile project(':downloads-plugin')
+            compile project(':downloads-plugin')
 //            compile project(':ala-charts-plugin')
 //            compile project(':images-client-plugin')
 //            compile project(':ala-bootstrap3')
@@ -103,7 +103,7 @@ dependencies {
 
     if (!inplace) {
         compile "au.org.ala.plugins.grails:biocache-hubs:3.0.0.DQ-SNAPSHOT", noCache
-        compile "au.org.ala.plugins.grails:downloads-plugin:2.1.0-SNAPSHOT", noCache
+        compile "au.org.ala.plugins.grails:downloads-plugin:2.1.1-SNAPSHOT", noCache
     }
 }
 
