@@ -23,7 +23,7 @@
 <div class="${fluidLayout?'container-fluid':'container'}" id="main-content">
     <g:if test="${grailsApplication.config.getProperty('skin.dataQualityLink.show', Boolean, false)}">
         <div style="text-align:center;"><a href="${grailsApplication.config.getProperty('skin.dataQualityLink.url', String, '')}${request.getServletPath()}?${request.getQueryString()}"
-                class="btn btn-success">${grailsApplication.config.getProperty('skin.dataQualityLink.text', String, 'Text not set')}</a>
+                class="btn btn-success tooltips" title="${grailsApplication.config.getProperty('skin.dataQualityLink.tooltip', String, '')}">${grailsApplication.config.getProperty('skin.dataQualityLink.text', String, 'Text not set')}</a>
         </div>
     </g:if>
     <g:layoutBody />

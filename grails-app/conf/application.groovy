@@ -72,6 +72,7 @@ test.var = "ala-hub"
 skin.dataQualityLink.show = false // set to true via external config
 skin.dataQualityLink.url = "https://biocache-dq-test.ala.org.au"
 skin.dataQualityLink.text = "Try the new search interface with automatic filtering based on data quality metrics"
+skin.dataQualityLink.tooltip = "Click to run the current search on our test server"
 
 // facets.includeDynamicFacets = true // for sandbox
 
