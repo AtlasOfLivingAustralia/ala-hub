@@ -6,3 +6,4 @@ out/*
 build
 .gradle
 logs/*
+.DS_Store
