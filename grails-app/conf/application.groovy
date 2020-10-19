@@ -69,6 +69,10 @@ skin.useAlaSpatialPortal = true
 skin.useAlaBie = true
 skin.taxaLinks.baseUrl = "https://bie.ala.org.au/species/" // 3rd party species pages. Leave blank for no links
 test.var = "ala-hub"
+skin.dataQualityLink.show = false // set to true via external config
+skin.dataQualityLink.url = "https://biocache-dq-test.ala.org.au"
+skin.dataQualityLink.text = "Try the new search interface with automatic filtering based on data quality metrics"
+skin.dataQualityLink.tooltip = "Click to run the current search on our test server"
 
 // facets.includeDynamicFacets = true // for sandbox
 

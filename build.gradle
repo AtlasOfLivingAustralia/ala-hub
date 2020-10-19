@@ -16,6 +16,7 @@ plugins {
 }
 
 version "4.0.0.DQ-SNAPSHOT"
+
 group "au.org.ala"
 
 apply plugin:"eclipse"
