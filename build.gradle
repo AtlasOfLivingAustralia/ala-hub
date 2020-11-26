@@ -99,7 +99,7 @@ dependencies {
 
     // ALA Plugins
     compile "org.grails.plugins:ala-auth:3.1.0", noCache
-    compile "org.grails.plugins:ala-bootstrap3:3.2.0", noCache
+    compile "org.grails.plugins:ala-bootstrap3:3.2.3", noCache
     compile "org.grails.plugins:ala-admin-plugin:2.2", noCache
 
     if (!inplace) {
