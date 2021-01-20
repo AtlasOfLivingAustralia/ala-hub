@@ -15,7 +15,7 @@ plugins {
     id "com.gorylenko.gradle-git-properties" version "1.4.17"
 }
 
-version "3.2.9"
+version "4.0.0"
 
 group "au.org.ala"
 
@@ -99,12 +99,12 @@ dependencies {
 
     // ALA Plugins
     compile "org.grails.plugins:ala-auth:3.1.0", noCache
-    compile "org.grails.plugins:ala-bootstrap3:3.2.0", noCache
+    compile "org.grails.plugins:ala-bootstrap3:3.2.3", noCache
     compile "org.grails.plugins:ala-admin-plugin:2.2", noCache
 
     if (!inplace) {
-        compile "au.org.ala.plugins.grails:biocache-hubs:2.1.9", noCache
-        compile "au.org.ala.plugins.grails:downloads-plugin:2.1.0", noCache
+        compile "au.org.ala.plugins.grails:biocache-hubs:2.1.10-SNAPSHOT", noCache
+        compile "au.org.ala.plugins.grails:downloads-plugin:2.1.1", noCache
     }
 }
 
