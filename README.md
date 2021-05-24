@@ -1,5 +1,6 @@
 # ala-hub   [![Build Status](https://travis-ci.com/AtlasOfLivingAustralia/ala-hub.svg?branch=develop&status=created)](https://travis-ci.com/github/AtlasOfLivingAustralia/ala-hub)
- 
+
+**_See also:_ [Integration Tests](#Tests)**
 
 **ala-hub** is a Grails applications that provides the main view for the _Atlas of Living Australia_(ALA) [Occurrence search portal](http://biocache.ala.org.au/search) using [biocache-hub](https://github.com/AtlasOfLivingAustralia/biocache-hubs/)  (Grails plugin) front-end.
 
@@ -21,3 +22,65 @@ $ ansible-playbook -i inventories/vagrant/ala-hub-vagrant ala-hub-standalone.yml
 ```
 
 **Note:** Adjust environment specific settings accordingly.
+
+## Tests
+
+The build is setup to work with Firefox and Chrome.
+
+Have a look at the `build.gradle` and the `src/test/resources/GebConfig.groovy` file.
+
+### Usage
+
+### Run with Firefox (default):
+
+    ./gradlew :integrationTest -Dusername=xxxx -Dpassword=xxxxx
+
+Or
+
+    ./gradlew :integrationTest
+
+when authentication is stored into the default file:
+
+    /data/spatial-hub/test/default.properties
+
+
+**See more: [How to pass authentication](#Authentication)**
+
+### run with Chrome:
+
+    ./gradlew :integrationTest -Ddriver=chrome
+
+Chrome driver > 89 is not available for webdirver
+Use npm to set the chrome driver version and reference the lib path from node_modules.
+
+Add `"chromedriver": "89.0.0"` to package.json
+
+Run `npm install`
+
+    In ./gebConfig.groovy
+
+    if (!System.getProperty("webdriver.chrome.driver")) {
+        System.setProperty("webdriver.chrome.driver", "node_modules/chromedriver/bin/chromedriver")
+    } 
+
+### Test other servers:
+
+    ./gradlew :integrationTest -DbaseUrl=http://spatial-test.ala.org.au/ws
+
+
+### Authentication
+
+Authentication info can be passed through with -Dusername and -Dpassword
+
+    /gradlew :integrationTest -Dusername=xxxx -Dpassword=xxxxx
+
+Or stored in a config file. The default config file is located in
+
+    /data/spatial-service/test/default.properties
+    
+    username="xxxx@csiro.au"
+    password="xxxxx"
+
+We can change the config file with -DconfigFile
+
+    /gradlew :integrationTest -DconfigFile="myconfig.properties"
