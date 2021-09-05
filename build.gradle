@@ -70,6 +70,7 @@ dependencies {
     def noCache = {
         exclude group: 'org.grails.plugins', module: 'cache'
         exclude group: 'org.ehcache', module: 'ehcache'
+        exclude group: 'org.grails.plugins', module: 'cache-ehcache'
     }
 
     compile "org.springframework.boot:spring-boot-starter-logging"
@@ -79,7 +80,8 @@ dependencies {
     provided "org.springframework.boot:spring-boot-starter-tomcat"
     compile "org.grails:grails-dependencies", noCache
     compile "org.grails:grails-web-boot"
-    compile "org.grails.plugins:cache"
+    compile "org.grails.plugins:cache:4.0.0"
+    compile "org.grails.plugins:cache-ehcache:3.0.0"
     compile "org.grails.plugins:scaffolding"
     compile "org.grails.plugins:hibernate5"
     compile "org.hibernate:hibernate-core:5.1.3.Final"
