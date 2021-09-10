@@ -113,6 +113,10 @@ environments:
     development:
         grails:
             serverURL: "https://devt.ala.org.au/ala-hub"
+        server:
+            contextPath: /ala-hub
+            port: 8081
+
         security:
             cas:
                 appServerName: "https://auth.ala.org.au"

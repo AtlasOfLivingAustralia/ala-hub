@@ -144,30 +144,6 @@ grails.exceptionresolver.params.exclude = ['password']
 // configure auto-caching of queries by default (if false you can cache individual queries with 'cache: true')
 grails.hibernate.cache.queries = false
 
-environments {
-    development {
-        serverName = 'http://dev.ala.org.au:8080'
-        grails.serverURL = 'http://dev.ala.org.au:8080/' + appName
-//        security.cas.appServerName = serverName
-//        security.cas.contextPath = "/${appName}"
-          //grails.resources.debug = true // cache & resources plugins
-    }
-    test {
-//        grails.serverURL = 'http://130.220.209.134:8080/'
-//        serverName='http://130.220.209.134:8080/'
-//        security.cas.appServerName = serverName
-//        security.cas.contextPath = "/${appName}"
-
-//        security.cas.appServerName = 'http://devt.ala.org.au:8080/'
-
-    }
-    production {
-//        grails.serverURL = 'https://biocache.ala.org.au'
-//        serverName='https://biocache.ala.org.au'
-//        security.cas.appServerName = serverName
-//        security.cas.contextPath = ""
-    }
-}
 
 //Restrict sandbox data access to drts by userid or admin
 // security.cas.uriFilterPattern=/proxy/.*,/occurrences/.*
