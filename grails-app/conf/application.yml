@@ -106,24 +106,23 @@ security:
         authenticateOnlyIfLoggedInPattern: '/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area,/query,/proxy/download/.*'
         uriExclusionFilterPattern: '/occurrences/shapeUpload,/images.*,/css.*,/js.*,.*json,/help/.*'
 
-server:
-    contextPath: /ala-hub
 
 environments:
     development:
         grails:
-            serverURL: "https://devt.ala.org.au/ala-hub"
+            serverURL: "http://devt.ala.org.au:8081/ala-hub"
         server:
-            contextPath: /ala-hub
             port: 8081
+            servlet:
+                contextPath: '/ala-hub'
 
         security:
             cas:
-                appServerName: "https://auth.ala.org.au"
+                appServerName: "http://dev.ala.org.au:8081/ala-hub"
     test:
         security:
             cas:
-                appServerName: "https://auth.ala.org.au"
+                appServerName: "http://dev.ala.org.au:8081"
     production:
         grails:
             serverURL: "https://biocache.ala.org.au"
