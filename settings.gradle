@@ -1,4 +1,4 @@
-rootProject.name='ala-hub4'
+rootProject.name='ala-hub'
 
 // Inplace plugin config
 // Set to true it needed only for development
@@ -6,7 +6,7 @@ boolean inplace = false
 
 if (inplace) {
     include ':biocache-hubs'
-    project(':biocache-hubs').projectDir = new File(settingsDir,'../biocache-hub4')
+    project(':biocache-hubs').projectDir = new File(settingsDir,'../biocache-hubs')
     include ':downloads-plugin'
     project(':downloads-plugin').projectDir = new File(settingsDir,'../downloads-plugin')
 //    include ':ala-charts-plugin'
