@@ -92,7 +92,7 @@ grails:
                 staticparts: none
 ---
 skin:
-    layout: "main"
+    layout: "ala-main"
     orgNameLong: "Atlas of Living Australia"
     orgNameShort: "ALA"
 privacyPolicy: "http://www.ala.org.au/about/terms-of-use/privacy-policy/"
@@ -102,9 +102,20 @@ headerAndFooter:
 
 security:
     cas:
-        uriFilterPattern: '/admin.*,/alaAdmin.*,/download.*'
-        authenticateOnlyIfLoggedInPattern: '/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area,/query,/proxy/download/.*'
-        uriExclusionFilterPattern: '/occurrences/shapeUpload,/images.*,/css.*,/js.*,.*json,/help/.*'
+        casServerName: 'https://auth.ala.org.au'
+        loginUrl: 'https://auth.ala.org.au/cas/login'
+        logoutUrl: 'https://auth.ala.org.au/cas/logout'
+        casServerUrlPrefix: 'https://auth.ala.org.au/cas'
+
+        bypass: false # set to true for non-ALA deployment
+        gateway: false
+        uriExclusionFilterPattern: '/assets.*,/images.*,/css.*,/js.*,/less.*,'
+        uriFilterPattern: '/alaAdmin.*'
+        #if false, ticket params always proceed
+        #true, only processes urls listed in authenticateOnlyIfLoggedInFilterPattern
+        applyUriFiltersToTicketValidation: false
+        authenticateOnlyIfLoggedInFilterPattern: '/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area,/query,/proxy/download/.*'
+        disableCAS: false
 
 
 environments:
@@ -118,7 +129,7 @@ environments:
 
         security:
             cas:
-                appServerName: "http://dev.ala.org.au:8081/ala-hub"
+                appServerName: "http://dev.ala.org.au:8081/"
     test:
         security:
             cas:
