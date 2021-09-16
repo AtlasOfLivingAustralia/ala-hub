@@ -16,8 +16,20 @@ buildscript {
 //    id "com.gorylenko.gradle-git-properties" version "1.4.17"
 //}
 
+ext {
+    // The drivers we want to use
+    drivers = ["firefox", "chrome", "chromeHeadless"]
 
-version "4.1.0-SNAPSHOT"
+    ext {
+        gebVersion = '2.3'
+        seleniumVersion = '3.14.0'
+        chromeDriverVersion = '2.44'
+        geckoDriverVersion = '0.26.0'
+    }
+}
+
+version "4.0.6-SNAPSHOT"
+
 group "au.org.ala"
 
 apply plugin:"eclipse"
@@ -43,7 +55,7 @@ configurations {
 }
 
 // Set to true it needed only for development
-boolean inplace = false
+boolean inplace = true
 
 if (inplace) {
     grails {
@@ -119,6 +131,30 @@ dependencies {
         compile "au.org.ala.plugins.grails:downloads-plugin:3.0-SNAPSHOT", noCache
     }
 }
+
+webdriverBinaries {
+    chromedriver "$chromeDriverVersion"
+    geckodriver "$geckoDriverVersion"
+}
+
+
+tasks.getByName("integrationTest") {
+    group JavaBasePlugin.VERIFICATION_GROUP
+
+    //outputs.upToDateWhen { false }  // Always run tests
+
+    systemProperty "geb.build.reportsDir", reporting.file("geb/$name")
+
+    systemProperty "geb.env",  System.properties['driver']?:"firefox"  // firefox by default
+    // pass test server by -DbaseUrl
+    systemProperty "geb.build.baseUrl", System.properties['baseUrl'] ?: "https://biocache-test.ala.org.au/"
+    //Store username and password into the default config file
+    systemProperty "configFile",System.properties['configFile']?: "/data/ala-hub/test/default.properties"
+    //or pass with -Dusername, -Dpassword
+    systemProperty "username", System.properties['username']
+    systemProperty "password", System.properties['password']
+}
+
 
 bootRun {
     ignoreExitValue true
