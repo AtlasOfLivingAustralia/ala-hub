@@ -6,15 +6,10 @@ buildscript {
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
-        //classpath "org.grails.plugins:hibernate5:7.0.5"
         classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:2.0"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:3.2.4"
     }
 }
-
-//plugins {
-//    id "com.gorylenko.gradle-git-properties" version "1.4.17"
-//}
 
 ext {
     // The drivers we want to use
@@ -88,7 +83,6 @@ dependencies {
     compile "org.grails:grails-web-boot"
     compile "org.grails:grails-logging"
     compile "org.grails:grails-plugin-rest"
-    compile "org.grails:grails-plugin-databinding"
     compile "org.grails:grails-plugin-i18n"
     compile "org.grails:grails-plugin-services"
     compile "org.grails:grails-plugin-url-mappings"
@@ -107,7 +101,6 @@ dependencies {
     runtime "javax.xml.bind:jaxb-api:2.3.1"
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:3.2.4"
     testCompile "io.micronaut:micronaut-inject-groovy"
-//    testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.mockito:mockito-core"
     testCompile "org.grails:grails-web-testing-support"
     testCompile "org.grails.plugins:geb"
@@ -119,7 +112,7 @@ dependencies {
 
     // Jars
     compile "org.apache.httpcomponents:httpclient:4.5.6"
-    compile 'xml-apis:xml-apis:1.4.01' // really?
+    compile 'xml-apis:xml-apis:1.4.01'
 
     // ALA Plugins
     compile "org.grails.plugins:ala-auth:3.2.3"
@@ -147,7 +140,7 @@ tasks.getByName("integrationTest") {
 
     systemProperty "geb.env",  System.properties['driver']?:"firefox"  // firefox by default
     // pass test server by -DbaseUrl
-    systemProperty "geb.build.baseUrl", System.properties['baseUrl'] ?: "https://biocache-test.ala.org.au/"
+    systemProperty "geb.build.baseUrl", System.properties['baseUrl'] ?: "http://devt.ala.org.au:8081/ala-hub/"
     //Store username and password into the default config file
     systemProperty "configFile",System.properties['configFile']?: "/data/ala-hub/test/default.properties"
     //or pass with -Dusername, -Dpassword
