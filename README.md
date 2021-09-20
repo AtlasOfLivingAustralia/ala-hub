@@ -4,7 +4,7 @@
 **ala-hub** is a Grails applications that provides the main view for the _Atlas of Living Australia_(ALA) [Occurrence search portal](http://biocache.ala.org.au/search) using [biocache-hub](https://github.com/AtlasOfLivingAustralia/biocache-hubs/)  (Grails plugin) front-end.
 
 ## Versions
-The grails4 branch contains the 4.0.12 series of the app compatible with Grails 4.0.x
+The grails4 branch, 5.x version, contains the 4.0.12 series of the app compatible with Grails 4.0.x
 
 The grails2 branch contains the 2.4.x series of the app compatible with Grails 2.x
 
