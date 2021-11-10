@@ -23,7 +23,7 @@ ext {
     }
 }
 
-version "5.0.0-SNAPSHOT"
+version "3.0-SNAPSHOT"
 
 group "au.org.ala"
 
@@ -58,7 +58,7 @@ if (inplace) {
         plugins {
             // When not inplace used, the dependencies below are managed by biocache-hubs plugin
             compile project(':biocache-hubs')
-            compile project(':downloads-plugin')
+//            compile project(':downloads-plugin')
 //            compile project(':ala-charts-plugin')
 //            compile project(':images-client-plugin')
 //            compile project(':ala-bootstrap3')
@@ -116,11 +116,11 @@ dependencies {
 
     // ALA Plugins
     compile "org.grails.plugins:ala-auth:3.2.3"
-    compile "org.grails.plugins:ala-bootstrap3:3.2.4"
+    compile "org.grails.plugins:ala-bootstrap3:3.4.0-SNAPSHOT"
     //compile "org.grails.plugins:ala-admin-plugin:2.2", noCache
 
     if (!inplace) {
-        compile "au.org.ala.plugins.grails:biocache-hubs:3.4.0-SNAPSHOT", noCache
+        compile "au.org.ala.plugins.grails:biocache-hubs:4.0.0-SNAPSHOT", noCache
         compile "au.org.ala.plugins.grails:downloads-plugin:3.0-SNAPSHOT", noCache
     }
 }
