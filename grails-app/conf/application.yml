@@ -1,6 +1,8 @@
 ---
 grails:
     profile: web
+    project:
+        groupId: 'au.org.ala'
     codegen:
         defaultPackage: au.org.ala.hub
     config:
@@ -20,6 +22,10 @@ grails:
             # Whether to translate GORM events into Reactor events
             # Disabled by default for performance reasons
             events: false
+    exceptionresolver:
+        params:
+            exclude:
+                - 'password'
     plugins:
         twitterbootstrap:
             fixtaglib: true
@@ -49,6 +55,10 @@ grails:
             accept:
                 header:
                     userAgents:
+                        - 'Gecko'
+                        - 'WebKit'
+                        - 'Presto'
+                        - 'Trident'
         types:
             all: '*/*'
             atom: application/atom+xml
@@ -72,6 +82,11 @@ grails:
             xml:
               - text/xml
               - application/xml
+    enable:
+        native2ascii: true
+    web:
+        disable:
+            multipart: false
     urlmapping:
         cache:
             maxsize: 1000
@@ -79,6 +94,9 @@ grails:
         defaultScope: singleton
     converters:
         encoding: UTF-8
+    json:
+        legacy:
+            builder: false
     views:
         default:
             codec: html
@@ -90,18 +108,38 @@ grails:
                 scriptlets: html
                 taglib: none
                 staticparts: none
+    serverURL: 'https://biocache.ala.org.au'
+
 ---
+serverName: 'https://biocache.ala.org.au'
+
 skin:
-    layout: "ala-main"
-    orgNameLong: "Atlas of Living Australia"
-    orgNameShort: "ALA"
-privacyPolicy: "http://www.ala.org.au/about/terms-of-use/privacy-policy/"
+    layout: 'ala-main'
+    orgNameLong: 'Atlas of Living Australia'
+    orgNameShort: 'ALA'
+    headerUrl: 'classpath:resources/generic-header.jsp'     # can be external URL
+    footerUrl: 'classpath:resources/generic-footer.jsp'     # can be external URL
+    fluidLayout: true                                       # true or false
+    exploreUrl: 'https://www.ala.org.au/explore-by-location/'
+    taxaLinks:
+        baseUrl: 'https://bie.ala.org.au/species/'
+    useAlaSpatialPortal: true
+    useAlaBie: true
+    dataQualityLink:
+        show: false                                         # set to true via external config
+        url: 'https://biocache-dq-test.ala.org.au'
+        text: 'Try the new search interface with automatic filtering based on data quality metrics'
+        tooltip: 'Click to run the current search on our test server'
+
+
+privacyPolicy: 'http://www.ala.org.au/about/terms-of-use/privacy-policy/'
 
 headerAndFooter:
     version: "1"
 
 security:
     cas:
+        appServerName: 'https://biocache.ala.org.au'
         casServerName: 'https://auth.ala.org.au'
         loginUrl: 'https://auth.ala.org.au/cas/login'
         logoutUrl: 'https://auth.ala.org.au/cas/logout'
@@ -117,6 +155,8 @@ security:
         authenticateOnlyIfLoggedInFilterPattern: '/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area,/query,/proxy/download/.*'
         disableCAS: false
 
+auth:
+    admin_role: 'ROLE_ADMIN'
 
 environments:
     development:
@@ -134,9 +174,3 @@ environments:
         security:
             cas:
                 appServerName: "http://dev.ala.org.au:8081"
-    production:
-        grails:
-            serverURL: "https://biocache.ala.org.au"
-        security:
-            cas:
-                appServerName: "https://auth.ala.org.au"
