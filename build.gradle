@@ -15,7 +15,7 @@ plugins {
     id "com.gorylenko.gradle-git-properties" version "1.4.17"
 }
 
-version "4.0.8"
+version "4.0.9"
 
 group "au.org.ala"
 
@@ -105,7 +105,7 @@ dependencies {
     compile "org.grails.plugins:ala-admin-plugin:2.2", noCache
 
     if (!inplace) {
-        compile "au.org.ala.plugins.grails:biocache-hubs:3.0.8", noCache
+        compile "au.org.ala.plugins.grails:biocache-hubs:3.0.9", noCache
         compile "au.org.ala.plugins.grails:downloads-plugin:2.2.0", noCache
     }
 }
@@ -119,4 +119,9 @@ bootRun {
 assets {
     minifyJs = true
     minifyCss = true
+    minifyOptions = [
+        languageMode: 'ES6',
+        targetLanguage: 'ES5',
+        optimizationLevel: 'SIMPLE'
+    ]
 }
