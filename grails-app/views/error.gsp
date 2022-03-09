@@ -33,7 +33,7 @@
     </g:if>
 </g:else>
 <ul class="errors">
-    <li>If this problem persists, please send an email to <a href="mailto:support@ala.org.au?subject=Reporting error on page: ${request.serverName}${request.forwardURI}">support@ala.org.au</a> and include the URL to this page.</li>
+    <li>If this problem persists, please send an email to <a href="mailto:${grailsApplication.config.supportEmail ?: 'support@ala.org.au'}?subject=Reporting error on page: ${request.serverName}${request.forwardURI}">${grailsApplication.config.supportEmail ?: 'support@ala.org.au'}</a> and include the URL to this page.</li>
 </ul>
 
 </body>
