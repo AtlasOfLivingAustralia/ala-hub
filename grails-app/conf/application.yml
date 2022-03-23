@@ -139,21 +139,47 @@ headerAndFooter:
 
 security:
     cas:
-        appServerName: 'https://biocache.ala.org.au'
-        casServerName: 'https://auth.ala.org.au'
-        loginUrl: 'https://auth.ala.org.au/cas/login'
-        logoutUrl: 'https://auth.ala.org.au/cas/logout'
-        casServerUrlPrefix: 'https://auth.ala.org.au/cas'
+        enabled: false # default is true, undefined behaviour if this omitted
+#        appServerName: 'http://localhost:8081/ala-hub'
+#        uriFilterPattern: '/*'
+    oidc:
+        enabled: true # default is false
+        discoveryUri: 'https://auth-dev.ala.org.au/cas/oidc/.well-known'
+        clientId: 'auth-dev-oidc-client-id'
+        secret: 'u85789gnghdfb765'
+        scope: 'openid profile email'
+        allowUnsignedIdTokens: true
 
-        bypass: false # set to true for non-ALA deployment
-        gateway: false
-        uriExclusionFilterPattern: '/assets.*,/images.*,/css.*,/js.*,/less.*,'
-        uriFilterPattern: '/alaAdmin.*'
-        #if false, ticket params always proceed
-        #true, only processes urls listed in authenticateOnlyIfLoggedInFilterPattern
-        applyUriFiltersToTicketValidation: false
-        authenticateOnlyIfLoggedInFilterPattern: '/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area,/query,/proxy/download/.*'
-        disableCAS: false
+#        discoveryUri: 'https://auth-test.ala.org.au/cas/oidc/.well-known'
+#        clientId: 'oidc-test-client-id'
+#        secret: '12345678'
+#        scope: 'openid profile email ala roles'
+#        allowUnsignedIdTokens: true
+#        discoveryUri: 'https://cognito-idp.ap-southeast-2.amazonaws.com/ap-southeast-2_mHcS6LBwS/.well-known/openid-configuration'
+#        clientId: '784ia8jbc5qjlogc26di3ga7dc'
+#        secret: 'nb4v1h2s7t7glnaqq1ec7jl5qrimgptibkh2asmumdtou57iu5v'
+#        scope: 'openid profile email'
+
+webservice:
+    jwt: true
+
+#security:
+#    cas:
+#        appServerName: 'https://biocache.ala.org.au'
+#        casServerName: 'https://auth.ala.org.au'
+#        loginUrl: 'https://auth.ala.org.au/cas/login'
+#        logoutUrl: 'https://auth.ala.org.au/cas/logout'
+#        casServerUrlPrefix: 'https://auth.ala.org.au/cas'
+#
+#        bypass: false # set to true for non-ALA deployment
+#        gateway: false
+#        uriExclusionFilterPattern: '/assets.*,/images.*,/css.*,/js.*,/less.*,'
+#        uriFilterPattern: '/alaAdmin.*'
+#        #if false, ticket params always proceed
+#        #true, only processes urls listed in authenticateOnlyIfLoggedInFilterPattern
+#        applyUriFiltersToTicketValidation: false
+#        authenticateOnlyIfLoggedInFilterPattern: '/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area,/query,/proxy/download/.*'
+#        disableCAS: false
 
 auth:
     admin_role: 'ROLE_ADMIN'
@@ -161,16 +187,16 @@ auth:
 environments:
     development:
         grails:
-            serverURL: "http://devt.ala.org.au:8081/ala-hub"
+            serverURL: "http://localhost:8081/ala-hub"
         server:
             port: 8081
             servlet:
                 contextPath: '/ala-hub'
 
-        security:
-            cas:
-                appServerName: "http://dev.ala.org.au:8081/"
-    test:
-        security:
-            cas:
-                appServerName: "http://dev.ala.org.au:8081"
+#        security:
+#            cas:
+#                appServerName: "http://dev.ala.org.au:8081/"
+#    test:
+#        security:
+#            cas:
+#                appServerName: "http://dev.ala.org.au:8081"
