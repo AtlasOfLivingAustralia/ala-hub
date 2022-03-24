@@ -229,7 +229,7 @@ publishing {
                     it.replaceNode {}
                 }
             }
-            from components.java
+            from components.web
         }
     }
 }
