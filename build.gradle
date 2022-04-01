@@ -106,7 +106,7 @@ dependencies {
     compile "au.org.ala.plugins.grails:downloads-plugin:2.2.1", noCache
 
     if (!inplace) {
-        compile "au.org.ala.plugins.grails:biocache-hubs:3.0.10-SNAPSHOT", noCache
+        compile "au.org.ala.plugins.grails:biocache-hubs:3.0.10", noCache
     }
 }
 
