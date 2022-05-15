@@ -15,7 +15,7 @@ plugins {
     id "com.gorylenko.gradle-git-properties" version "1.4.17"
 }
 
-version "4.0.9-SNAPSHOT"
+version "4.0.11-SNAPSHOT"
 
 group "au.org.ala"
 
@@ -56,7 +56,7 @@ if (inplace) {
         plugins {
             // When not inplace used, the dependencies below are managed by biocache-hubs plugin
             compile project(':biocache-hubs')
-            compile project(':downloads-plugin')
+//            compile project(':downloads-plugin')
 //            compile project(':ala-charts-plugin')
 //            compile project(':images-client-plugin')
 //            compile project(':ala-bootstrap3')
@@ -103,10 +103,10 @@ dependencies {
     compile "org.grails.plugins:ala-auth:3.1.3", noCache
     compile "org.grails.plugins:ala-bootstrap3:3.2.3", noCache
     compile "org.grails.plugins:ala-admin-plugin:2.2", noCache
+    compile "au.org.ala.plugins.grails:downloads-plugin:2.2.1", noCache
 
     if (!inplace) {
-        compile "au.org.ala.plugins.grails:biocache-hubs:3.0.9-SNAPSHOT", noCache
-        compile "au.org.ala.plugins.grails:downloads-plugin:2.2.0", noCache
+        compile "au.org.ala.plugins.grails:biocache-hubs:3.0.10", noCache
     }
 }
 
@@ -119,4 +119,9 @@ bootRun {
 assets {
     minifyJs = true
     minifyCss = true
+    minifyOptions = [
+        languageMode: 'ES6',
+        targetLanguage: 'ES5',
+        optimizationLevel: 'SIMPLE'
+    ]
 }
