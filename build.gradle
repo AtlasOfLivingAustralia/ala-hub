@@ -15,7 +15,7 @@ plugins {
     id "com.gorylenko.gradle-git-properties" version "1.4.17"
 }
 
-version "4.0.12.2"
+version "4.0.12.3"
 
 group "au.org.ala"
 
@@ -48,7 +48,7 @@ bootRepackage {
 // Inplace plugin config
 
 // Set to true it needed only for development
-boolean inplace = false
+boolean inplace = true
 
 if (inplace) {
     grails {
@@ -106,7 +106,7 @@ dependencies {
     compile "au.org.ala.plugins.grails:downloads-plugin:2.2.1", noCache
 
     if (!inplace) {
-        compile "au.org.ala.plugins.grails:biocache-hubs:3.0.12.2", noCache
+        compile "au.org.ala.plugins.grails:biocache-hubs:3.0.12.4", noCache
     }
 }
 
