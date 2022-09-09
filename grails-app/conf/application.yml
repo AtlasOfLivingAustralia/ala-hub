@@ -145,7 +145,7 @@ security:
         discoveryUri: 'https://auth-test.ala.org.au/cas/oidc/.well-known'
         clientId: 'change me'
         secret: 'change me'
-        scope: 'openid profile email'
+        scope: 'openid,profile,email,ala,roles'
         allowUnsignedIdTokens: true
 
 webservice:
