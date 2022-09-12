@@ -139,18 +139,15 @@ headerAndFooter:
 
 security:
     cas:
-        enabled: false # default is true, undefined behaviour if this omitted
+        enabled: false
     oidc:
-        enabled: true # default is false
+        enabled: true
         discoveryUri: 'https://auth-test.ala.org.au/cas/oidc/.well-known'
         clientId: 'change me'
         secret: 'change me'
-        scope: 'openid,profile,email,ala,roles'
-        allowUnsignedIdTokens: true
 
 webservice:
     jwt: true
-
 auth:
     admin_role: 'ROLE_ADMIN'
 
