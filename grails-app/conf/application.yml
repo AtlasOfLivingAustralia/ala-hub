@@ -66,22 +66,22 @@ grails:
             csv: text/csv
             form: application/x-www-form-urlencoded
             html:
-              - text/html
-              - application/xhtml+xml
+                - text/html
+                - application/xhtml+xml
             js: text/javascript
             json:
-              - application/json
-              - text/json
+                - application/json
+                - text/json
             multipartForm: multipart/form-data
             pdf: application/pdf
             rss: application/rss+xml
             text: text/plain
             hal:
-              - application/hal+json
-              - application/hal+xml
+                - application/hal+json
+                - application/hal+xml
             xml:
-              - text/xml
-              - application/xml
+                - text/xml
+                - application/xml
     enable:
         native2ascii: true
     web:
@@ -139,15 +139,17 @@ headerAndFooter:
 
 security:
     cas:
-        enabled: false
+        enabled: false # default is true, undefined behaviour if this omitted
     oidc:
-        enabled: true
+        enabled: true # default is false
         discoveryUri: 'https://auth-test.ala.org.au/cas/oidc/.well-known'
         clientId: 'change me'
         secret: 'change me'
+        scope: 'openid,profile,email,ala,roles'
 
 webservice:
     jwt: true
+
 auth:
     admin_role: 'ROLE_ADMIN'
 
