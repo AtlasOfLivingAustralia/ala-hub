@@ -29,6 +29,10 @@ grails:
     plugins:
         twitterbootstrap:
             fixtaglib: true
+
+biocache:
+    groupedFacetsUrl: "file:///data/ala-hub/config/grouped_facets_ala.json" #change me in external file if necessary
+
 info:
     app:
         name: '@info.app.name@'
@@ -158,6 +162,7 @@ environments:
     development:
         grails:
             serverURL: "http://localhost:8081/ala-hub"
+        serverName: "http://localhost:8081"  #change me in external config
         server:
             port: 8081
             servlet:

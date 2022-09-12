@@ -23,7 +23,7 @@ ext {
     }
 }
 
-version "4.1.0-SNAPSHOT"
+version "5.0-SNAPSHOT"
 
 group "au.org.ala"
 
@@ -50,7 +50,7 @@ configurations {
 }
 
 // Set to true it needed only for development
-boolean inplace = false
+boolean inplace = true
 
 if (inplace) {
     grails {
@@ -58,11 +58,11 @@ if (inplace) {
         plugins {
             // When not inplace used, the dependencies below are managed by biocache-hubs plugin
             compile project(':biocache-hubs')
-            compile project(':downloads-plugin')
+//            compile project(':downloads-plugin')
 //            compile project(':ala-charts-plugin')
 //            compile project(':images-client-plugin')
-            compile project(':ala-bootstrap3')
-            compile project(':ala-ws-plugin')
+//            compile project(':ala-bootstrap3')
+//            compile project(':ala-ws-plugin')
         }
     }
 }
