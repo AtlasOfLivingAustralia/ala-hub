@@ -212,7 +212,7 @@ publishing {
 
 
     publications {
-        mavenWeb(org.gradle.api.publish.maven.MavenPublication) {
+        mavenJar(MavenPublication) {
             pom.withXml {
                 def pomNode = asNode()
                 pomNode.dependencyManagement.replaceNode {}
@@ -226,7 +226,7 @@ publishing {
                     it.replaceNode {}
                 }
             }
-            from components.java
+            from components.web
         }
     }
 }
