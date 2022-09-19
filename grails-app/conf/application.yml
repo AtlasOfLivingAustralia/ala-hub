@@ -149,7 +149,7 @@ security:
         discoveryUri: 'https://auth-test.ala.org.au/cas/oidc/.well-known'
         clientId: 'change me'
         secret: 'change me'
-        scope: 'openid,profile,email,ala,roles'
+        scope: 'openid profile email ala roles'
 
 webservice:
     jwt: true
