@@ -1,14 +1,11 @@
 package au.org.ala.hub
 
 import au.org.ala.hub.SecureSandboxInterceptor
-import grails.test.mixin.TestFor
+import grails.testing.web.interceptor.InterceptorUnitTest
 import spock.lang.Specification
 
-/**
- * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
- */
-@TestFor(SecureSandboxInterceptor)
-class SecureSandboxInterceptorSpec extends Specification {
+
+class SecureSandboxInterceptorSpec extends Specification implements InterceptorUnitTest<SecureSandboxInterceptor> {
 
     def setup() {
     }

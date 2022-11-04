@@ -1,6 +1,6 @@
 language: groovy
 jdk:
-- openjdk8
+- openjdk11
 sudo: false
 branches:
   only:
@@ -9,6 +9,7 @@ branches:
   - develop
   - EYA-enhancements
   - feature/data-quality
+  - epic/grails4/oidc-auth
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -19,9 +20,14 @@ cache:
   - $HOME/.gradle/caches/
   - $HOME/.gradle/wrapper/
 
+script:
+  - echo "skipping functional tests"
+  - ./gradlew war
+
 after_success:
   - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && travis_retry ./gradlew publish'
 env:
   global:
+  - JAVA_TOOL_OPTIONS=-Dhttps.protocols=TLSv1.2
   - secure: XuqIReYymPo+LQWKa1mRm0rollfvmVYV4+Hx0lMcunbu3eNsFc5GrRmocpo2r2z0N5bbV/0tHTQXylyvvvKaEFvbRx7KGh/tZI8/EOrouwQ9CG1YMJP33Kn4kOmETP5EO69RoMqBgsaMr3EFc1z/EI38lZWLR9kcA/awwBCAMZ0=
   - secure: KAIqn+fMFEvP0uMlTOiKp60ps/ev87O07GaHTCNBzLhrQ1C63T+gSCJD28ADPQlVM7PtSqmuGv+ihNnxBP/5YWFY6LK/DXXYrigaDpGSkSrIKdv5Yt0IJZliHp1XmYevVkRCYbGXKaLZbYWV1hnKNI4vZa0K8HOoFtaR81U+rho=
