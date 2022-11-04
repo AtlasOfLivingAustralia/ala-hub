@@ -1,4 +1,4 @@
-<g:applyLayout name="main">
+<g:applyLayout name="ala-main">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <alatag:addApplicationMetaTags/>

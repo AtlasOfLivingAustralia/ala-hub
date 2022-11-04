@@ -64,8 +64,11 @@ switch (Environment.current) {
                            'au.org.ala.downloads.plugin',
                            'grails.app',
                            'org.grails.plugins',
+                           "org.apache.http.wire",
+                           "org.apache.http.headers"
                 ],
                 (TRACE): [
+                        'org.pac4j'
                 ]
         ].each { level, names -> names.each { name -> logger(name, level) } }
 
