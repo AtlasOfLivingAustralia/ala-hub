@@ -126,7 +126,7 @@ dependencies {
     //compile "org.grails.plugins:ala-admin-plugin:2.2", noCache
     if (!inplace) {
         compile "au.org.ala.plugins.grails:biocache-hubs:5.0", noCache
-        compile "au.org.ala.plugins.grails:downloads-plugin:3.0", noCache
+        compile "au.org.ala.plugins.grails:downloads-plugin:3.1", noCache
         compile "org.grails.plugins:ala-bootstrap3:4.1.0", {
             exclude group: 'au.org.ala', module: 'ala-cas-client'
         }
@@ -160,8 +160,8 @@ tasks.getByName("integrationTest") {
 bootRun {
     ignoreExitValue true
     jvmArgs(
-        '-Dspring.output.ansi.enabled=always', 
-        '-noverify', 
+        '-Dspring.output.ansi.enabled=always',
+        '-noverify',
         '-XX:TieredStopAtLevel=1',
         '-Xmx1024m')
     sourceResources sourceSets.main
