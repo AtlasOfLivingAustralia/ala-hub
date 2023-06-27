@@ -140,8 +140,8 @@ dependencies {
     }
     //implementation "org.grails.plugins:ala-admin-plugin:2.2", noCache
     if (!inplace) {
-        implementation "au.org.ala.plugins.grails:biocache-hubs:6.0.1-SNAPSHOT", noCache
-        implementation "au.org.ala.plugins.grails:downloads-plugin:3.3-SNAPSHOT", noCache
+        implementation "au.org.ala.plugins.grails:biocache-hubs:6.0.1", noCache
+        implementation "au.org.ala.plugins.grails:downloads-plugin:4.0.0", noCache
         implementation "org.grails.plugins:ala-bootstrap3:4.1.0", {
             exclude group: 'au.org.ala', module: 'ala-cas-client'
         }
