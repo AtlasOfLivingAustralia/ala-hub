@@ -241,6 +241,8 @@ publishing {
     }
 
     bootWar {
+        exclude 'logback.groovy'
+        exclude 'logback.groovy.disabled'
         launchScript()
     }
 }
