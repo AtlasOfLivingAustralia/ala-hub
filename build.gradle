@@ -135,14 +135,12 @@ dependencies {
 
     // ALA Plugins
 //    implementation "org.grails.plugins:ala-auth:3.2.3"
-    implementation "org.grails.plugins:ala-bootstrap3:4.1.0", {
-        exclude group: 'au.org.ala', module: 'ala-cas-client'
-    }
+
     //implementation "org.grails.plugins:ala-admin-plugin:2.2", noCache
     if (!inplace) {
-        implementation "au.org.ala.plugins.grails:biocache-hubs:6.0.2", noCache
-        implementation "au.org.ala.plugins.grails:downloads-plugin:4.0.0", noCache
-        implementation "org.grails.plugins:ala-bootstrap3:4.1.0", {
+        implementation "au.org.ala.plugins.grails:biocache-hubs:6.1.0", noCache
+        implementation "au.org.ala.plugins.grails:downloads-plugin:4.2.0", noCache
+        implementation "org.grails.plugins:ala-bootstrap3:4.4.0", {
             exclude group: 'au.org.ala', module: 'ala-cas-client'
         }
     }
