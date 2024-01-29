@@ -1,17 +1,34 @@
-
 buildscript {
-    repositories {
-        mavenLocal()
-        maven { url "https://nexus.ala.org.au/content/groups/public/" }
-        maven { url "https://plugins.gradle.org/m2/" }
-        maven { url "https://repo.grails.org/grails/core" }
-    }
-    dependencies {
-        classpath "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
-        classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:2.6"
-        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:3.4.7"
-    }
+    version "7.0.0-SNAPSHOT"
+    group "au.org.ala"
 }
+
+plugins {
+    id "groovy"
+    id "org.grails.grails-gsp"
+    id "org.grails.grails-web"
+    id "war"
+    id "idea"
+    id "com.bertramlabs.asset-pipeline"
+    id "com.github.erdi.webdriver-binaries" version "3.0"
+    id "eclipse"
+
+    id "maven-publish"
+}
+
+//buildscript {
+//    repositories {
+//        mavenLocal()
+//        maven { url "https://nexus.ala.org.au/content/groups/public/" }
+//        maven { url "https://plugins.gradle.org/m2/" }
+//        maven { url "https://repo.grails.org/grails/core" }
+//    }
+//    dependencies {
+//        classpath "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
+//        classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:2.6"
+//        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:3.4.7"
+//    }
+//}
 
 ext {
     // The drivers we want to use
@@ -25,20 +42,6 @@ ext {
     }
 }
 
-
-
-version "6.1.0-SNAPSHOT"
-group "au.org.ala"
-
-apply plugin:"eclipse"
-apply plugin:"idea"
-apply plugin:"war"
-apply plugin:"org.grails.grails-web"
-apply plugin:"com.github.erdi.webdriver-binaries"
-apply plugin:"com.bertramlabs.asset-pipeline"
-apply plugin:"org.grails.grails-gsp"
-apply plugin:"maven-publish"
-
 repositories {
     mavenLocal()
     maven { url "https://nexus.ala.org.au/content/groups/public/" }
@@ -50,6 +53,15 @@ configurations {
     runtimeClasspath {
         extendsFrom developmentOnly
     }
+}
+
+bootWar {
+    launchScript()
+    dependsOn(compileGroovyPages)
+}
+
+war {
+    dependsOn(compileGroovyPages)
 }
 
 // Set to true it needed only for development
@@ -130,7 +142,7 @@ dependencies {
     testRuntimeOnly "org.seleniumhq.selenium:selenium-firefox-driver:4.0.0"
 
     // Jars
-    implementation "org.apache.httpcomponents:httpclient:4.5.6"
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
     implementation 'xml-apis:xml-apis:1.4.01'
 
     // ALA Plugins
@@ -138,8 +150,8 @@ dependencies {
 
     //implementation "org.grails.plugins:ala-admin-plugin:2.2", noCache
     if (!inplace) {
-        implementation "au.org.ala.plugins.grails:biocache-hubs:6.1.0", noCache
-        implementation "au.org.ala.plugins.grails:downloads-plugin:4.2.2", noCache
+        implementation "au.org.ala.plugins.grails:biocache-hubs:7.0.0-SNAPSHOT", noCache
+        implementation "au.org.ala.plugins.grails:downloads-plugin:5.0.0-SNAPSHOT", noCache
         implementation "org.grails.plugins:ala-bootstrap3:4.4.0", {
             exclude group: 'au.org.ala', module: 'ala-cas-client'
         }
