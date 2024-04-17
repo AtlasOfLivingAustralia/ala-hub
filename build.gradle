@@ -16,20 +16,6 @@ plugins {
     id "maven-publish"
 }
 
-//buildscript {
-//    repositories {
-//        mavenLocal()
-//        maven { url "https://nexus.ala.org.au/content/groups/public/" }
-//        maven { url "https://plugins.gradle.org/m2/" }
-//        maven { url "https://repo.grails.org/grails/core" }
-//    }
-//    dependencies {
-//        classpath "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
-//        classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:2.6"
-//        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:3.4.7"
-//    }
-//}
-
 ext {
     // The drivers we want to use
     drivers = ["firefox", "chrome", "chromeHeadless"]
@@ -150,8 +136,8 @@ dependencies {
 
     //implementation "org.grails.plugins:ala-admin-plugin:2.2", noCache
     if (!inplace) {
-        implementation "au.org.ala.plugins.grails:biocache-hubs:7.0.0-SNAPSHOT", noCache
-        implementation "au.org.ala.plugins.grails:downloads-plugin:5.0.0-SNAPSHOT", noCache
+        implementation "au.org.ala.plugins.grails:biocache-hubs:7.0.0", noCache
+        implementation "au.org.ala.plugins.grails:downloads-plugin:5.0.0", noCache
         implementation "org.grails.plugins:ala-bootstrap3:4.4.0", {
             exclude group: 'au.org.ala', module: 'ala-cas-client'
         }
