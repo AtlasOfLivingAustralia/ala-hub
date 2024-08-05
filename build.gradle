@@ -1,5 +1,5 @@
 buildscript {
-    version "7.0.0"
+    version "7.1.0-SNAPSHOT"
     group "au.org.ala"
 }
 
@@ -136,9 +136,9 @@ dependencies {
 
     //implementation "org.grails.plugins:ala-admin-plugin:2.2", noCache
     if (!inplace) {
-        implementation "au.org.ala.plugins.grails:biocache-hubs:7.0.0", noCache
+        implementation "au.org.ala.plugins.grails:biocache-hubs:7.1.0", noCache
         implementation "au.org.ala.plugins.grails:downloads-plugin:5.0.0", noCache
-        implementation "org.grails.plugins:ala-bootstrap3:4.4.0", {
+        implementation "org.grails.plugins:ala-bootstrap3:4.5.0", {
             exclude group: 'au.org.ala', module: 'ala-cas-client'
         }
     }
