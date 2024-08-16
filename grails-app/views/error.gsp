@@ -4,6 +4,11 @@
     <title><g:if env="development">Grails Runtime Exception</g:if><g:else>Error</g:else></title>
     <meta name="layout" content="${grailsApplication.config.getProperty('skin.layout')}"/>
     <g:if env="development"><asset:stylesheet src="errors.css" type="text/css"/></g:if>
+    <style>
+        ul.errors H1 {
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
 <div class="${grailsApplication.config.getProperty('skin.fluidLayout')?'container-fluid':'container'}" id="main-content">
