@@ -12,8 +12,8 @@ plugins {
     id "com.bertramlabs.asset-pipeline"
     id "com.github.erdi.webdriver-binaries" version "3.0"
     id "eclipse"
-
     id "maven-publish"
+    id "application"
 }
 
 ext {
@@ -147,7 +147,10 @@ bootRun {
         '-Dspring.output.ansi.enabled=always',
         '-noverify',
         '-XX:TieredStopAtLevel=1',
-        '-Xmx1024m')
+        '-Xmx1024m',
+        '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+        '--add-opens', 'java.base/java.lang.reflect=ALL-UNNAMED'
+    )
     sourceResources sourceSets.main
     String springProfilesActive = 'spring.profiles.active'
     systemProperty springProfilesActive, System.getProperty(springProfilesActive)
@@ -162,6 +165,13 @@ tasks.withType(GroovyCompile) {
 assets {
     minifyJs = true
     minifyCss = true
+}
+
+bootJar {
+    enabled = true
+    classifier = 'exec'
+    launchScript()
+    dependsOn(compileGroovyPages)
 }
 
 publishing {
@@ -193,13 +203,6 @@ publishing {
                 artifact bootJar
             }
         }
-    }
-
-    bootJar {
-        enabled = true
-        classifier = 'exec'
-        launchScript()
-        dependsOn(compileGroovyPages)
     }
 }
 
