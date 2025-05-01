@@ -134,10 +134,10 @@ dependencies {
     implementation "org.grails.plugins:ala-bootstrap3:4.5.0", {
         exclude group: 'au.org.ala', module: 'ala-cas-client'
     }
-    implementation "au.org.ala.plugins.grails:downloads-plugin:5.1.0-SNAPSHOT"
+    implementation "au.org.ala.plugins.grails:downloads-plugin:5.1.0"
 
     if (!inplace) {
-        implementation "au.org.ala.plugins.grails:biocache-hubs:8.0.0-SNAPSHOT", noCache
+        implementation "au.org.ala.plugins.grails:biocache-hubs:8.0.0", noCache
     }
 }
 
