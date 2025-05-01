@@ -1,12 +1,11 @@
 language: groovy
 jdk:
-- openjdk11
+- openjdk17
 sudo: false
 branches:
   only:
   - master
   - develop
-  - grails6
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -19,7 +18,7 @@ cache:
 
 script:
   - echo "skipping functional tests"
-  - ./gradlew war
+  - ./gradlew assemble
 
 after_success:
   - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && travis_retry ./gradlew publish'

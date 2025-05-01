@@ -1,5 +1,5 @@
 buildscript {
-    version "7.1.1"
+    version "8.0.0-SNAPSHOT"
     group "au.org.ala"
 }
 
@@ -12,8 +12,8 @@ plugins {
     id "com.bertramlabs.asset-pipeline"
     id "com.github.erdi.webdriver-binaries" version "3.0"
     id "eclipse"
-
     id "maven-publish"
+    id "application"
 }
 
 ext {
@@ -134,10 +134,10 @@ dependencies {
     implementation "org.grails.plugins:ala-bootstrap3:4.5.0", {
         exclude group: 'au.org.ala', module: 'ala-cas-client'
     }
-    implementation "au.org.ala.plugins.grails:downloads-plugin:5.0.0"
+    implementation "au.org.ala.plugins.grails:downloads-plugin:5.1.0"
 
     if (!inplace) {
-        implementation "au.org.ala.plugins.grails:biocache-hubs:7.1.1", noCache
+        implementation "au.org.ala.plugins.grails:biocache-hubs:8.0.0", noCache
     }
 }
 
@@ -147,7 +147,10 @@ bootRun {
         '-Dspring.output.ansi.enabled=always',
         '-noverify',
         '-XX:TieredStopAtLevel=1',
-        '-Xmx1024m')
+        '-Xmx1024m',
+        '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+        '--add-opens', 'java.base/java.lang.reflect=ALL-UNNAMED'
+    )
     sourceResources sourceSets.main
     String springProfilesActive = 'spring.profiles.active'
     systemProperty springProfilesActive, System.getProperty(springProfilesActive)
@@ -162,6 +165,13 @@ tasks.withType(GroovyCompile) {
 assets {
     minifyJs = true
     minifyCss = true
+}
+
+bootJar {
+    enabled = true
+    classifier = 'exec'
+    launchScript()
+    dependsOn(compileGroovyPages)
 }
 
 publishing {
@@ -190,12 +200,9 @@ publishing {
         publications {
             mavenJar(MavenPublication) {
                 artifact bootWar
+                artifact bootJar
             }
         }
-    }
-
-    bootWar {
-        launchScript()
     }
 }
 
